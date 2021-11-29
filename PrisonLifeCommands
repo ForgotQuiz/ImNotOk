@@ -518,7 +518,7 @@ Cmd[#Cmd + 1] =	{Text = "spookyware",Title = "Executes SpookyWare Hub, Aliasses 
 Cmd[#Cmd + 1] =	{Text = "fecat",Title = "Executes Fe Cat Script, Aliasses reanim3"}
 Cmd[#Cmd + 1] =	{Text = "chatbypasser",Title = "Executes Chat Bypasser, Aliasses chatb"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
-Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes IpLogger, Aliasses reanim2"}
+Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes FE SCP, Aliasses reanim2"}
 Cmd[#Cmd + 1] =	{Text = "lagbeam / beam2 [plr]",Title = "Shoot a beam to player but lag"}
 Cmd[#Cmd + 1] =	{Text = "crash / beam3 [plr]",Title = "Shoot a beam to player but even more lag"}
 Cmd[#Cmd + 1] = {Text = "antispamarrest",Title = "Activate anti spam arrest"}
