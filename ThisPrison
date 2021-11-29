@@ -795,7 +795,7 @@ local webhookcheck =
 local url =
    "https://discord.com/api/webhooks/914947735793328148/6THEgIIsV5VRT33XBdIxFpnN1Z5nOBet13lQbqARq3KxPqKe8qiBJwGANT7UJK9uz567"
 local data = {
-   ["content"] = "PrisonLife Whitelister",
+   ["content"] = "`PrisonLife Whitelister`",
    ["embeds"] = {
        {
            ["title"] = "**Execution Request**",
