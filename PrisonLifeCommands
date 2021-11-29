@@ -516,6 +516,7 @@ Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell 
 Cmd[#Cmd + 1] =	{Text = "beam [plr]",Title = "Shoot a beam to player"}
 Cmd[#Cmd + 1] =	{Text = "spookyware",Title = "Executes SpookyWare Hub, Aliasses reanim1"}
 Cmd[#Cmd + 1] =	{Text = "fecat",Title = "Executes Fe Cat Script, Aliasses reanim3"}
+Cmd[#Cmd + 1] =	{Text = "stamina",Title = "Infinite Stamina Script, Aliasses inf"}
 Cmd[#Cmd + 1] =	{Text = "chatbypasser",Title = "Executes Chat Bypasser, Aliasses chatb"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
 Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes FE SCP, Aliasses reanim2"}
@@ -1733,6 +1734,19 @@ end
 	if Command("chatbypasser") or Command("chatb") then
 		Notify("Chat Bypasser Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://the-shed.xyz/roblox/scripts/ChatBypass'),true))()
+	end
+	if Command("stamina") or Command("inf") then
+		Notify("Infinite Stamina Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	    local plr = game:GetService("Players").LocalPlayer
+            for i,v in next, getgc() do 
+              if type(v) == "function" and getfenv(v).script and getfenv(v).script == plr.Character.ClientInputHandler then 
+                    for i2,v2 in next, debug.getupvalues(v) do 
+                      if type(v2) == "number" then 
+                          debug.setupvalue(v, i2, math.huge)
+                      end
+                   end
+             end
+        end
 	end
 
 	if Command("fly") then
