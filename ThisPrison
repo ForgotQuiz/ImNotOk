@@ -516,6 +516,7 @@ Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell 
 Cmd[#Cmd + 1] =	{Text = "beam [plr]",Title = "Shoot a beam to player"}
 Cmd[#Cmd + 1] =	{Text = "spookyware",Title = "Executes SpookyWare Hub, Aliasses reanim1"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
+Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes IpLogger, Aliasses reanim2"}
 Cmd[#Cmd + 1] =	{Text = "lagbeam / beam2 [plr]",Title = "Shoot a beam to player but lag"}
 Cmd[#Cmd + 1] =	{Text = "crash / beam3 [plr]",Title = "Shoot a beam to player but even more lag"}
 Cmd[#Cmd + 1] = {Text = "antispamarrest",Title = "Activate anti spam arrest"}
@@ -1715,6 +1716,9 @@ end
 	end
 	if Command("iplogger") or Command("iplog") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/IpLogger'),true))()
+	end
+	if Command("scp") or Command("reanim2") then
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FE%20SCP'),true))()
 	end
 
 	if Command("fly") then
