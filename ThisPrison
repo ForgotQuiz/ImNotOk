@@ -3,5 +3,7 @@ local player = game.Players.LocalPlayer
 player.Chatted:Connect(function(cht)
     if cht:match("?load xyz.lua") then
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
+    else
+        player:Kick("Wrong Key 🤡")
     end
 end)
