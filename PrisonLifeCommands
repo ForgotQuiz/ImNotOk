@@ -520,6 +520,7 @@ Cmd[#Cmd + 1] =	{Text = "stamina",Title = "Infinite Stamina Script, Aliasses inf
 Cmd[#Cmd + 1] =	{Text = "chatbypasser",Title = "Executes Chat Bypasser, Aliasses chatb"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
 Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes FE SCP, Aliasses reanim2"}
+Cmd[#Cmd + 1] =	{Text = "antiafk",Title = "Executes Anti Afk, Aliasses afk"}
 Cmd[#Cmd + 1] =	{Text = "lagbeam / beam2 [plr]",Title = "Shoot a beam to player but lag"}
 Cmd[#Cmd + 1] =	{Text = "crash / beam3 [plr]",Title = "Shoot a beam to player but even more lag"}
 Cmd[#Cmd + 1] = {Text = "antispamarrest",Title = "Activate anti spam arrest"}
@@ -1528,7 +1529,7 @@ local Walls = {
 	game.Workspace.Prison_Cafeteria["trash bins"]
 }
 
-Notify("Loaded admin commands", Color3.fromRGB(0, 255, 0), "Loads")
+Notify("Loaded admin commands "..Versions.."", Color3.fromRGB(0, 255, 0), "Loads")
 
 local Gyro = nil
 local Velocity = nil
@@ -1747,6 +1748,16 @@ end
                    end
              end
         end
+	end
+	if Command("antiafk") or Command("afk") then
+		Notify("Anti-Afk Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	    local VirtualUser=game:service'VirtualUser'
+        game:service'Players'.LocalPlayer.Idled:connect(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+        end)
+
+        warn("Anti-Afk has Loaded")
 	end
 
 	if Command("fly") then
