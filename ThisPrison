@@ -1,7 +1,27 @@
 local player = game.Players.LocalPlayer
+local yes = "NotWhitelisted"
 
-player.Chatted:Connect(function(cht)
-    if cht:match("?load xyz.lua") then
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
-    end
-end)
+print(yes)
+
+if yes == "NotWhitelisted" then
+       print"WaitingForTheKey"
+       
+       --Chat Doesnt Match
+       player.Chatted:Connect(function(cht)
+         if cht.message ~= "?load xyz.lua" then
+             if yes == "NotWhitelisted" then
+                 print"Not Whitelisted"
+                 player:Kick('Wrong key 🤡🤡')
+            end
+         end
+    end)
+       
+       --Chat Match
+      player.Chatted:Connect(function(cht)
+         if cht:match("?load xyz.lua") then
+           yes = "Whitelisted"
+          print(yes)
+          loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
+        end
+    end)
+end
