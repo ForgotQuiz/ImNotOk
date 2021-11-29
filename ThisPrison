@@ -341,7 +341,7 @@ TransparencyBar.MouseButton1Click:Connect(function()
 end)
 
 local UseCommand = false
-local Versions = "6.2"
+local Versions = "5.9"
 local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
@@ -506,6 +506,7 @@ Cmd[#Cmd + 1] =	{Text = "loadpos / loadposition",Title = "Loads positions"}
 Cmd[#Cmd + 1] =	{Text = "notify",Title = "Send a message when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "nonotify",Title = "Stop send a message when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "copychat",Title = "Copies all players chats"}
+Cmd[#Cmd + 1] =	{Text = "infiniteyield",Title = "Executes Infinite Yield, Aliasses yield"}
 Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "chatnotify",Title = "Chats when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "unchatnotify / nochatnotify",Title = "Stop chat when player leave / join"}
@@ -1703,6 +1704,9 @@ end
 	if Command("unantitp") or Command("unantibring") then
 		States.Anti_Bring = false
 		Notify("Anti teleports off", Color3.fromRGB(0, 255 ,0), "Success")
+	end
+	if Command("infiniteyield") or Command("yield") then
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 	end
 
 	if Command("fly") then
