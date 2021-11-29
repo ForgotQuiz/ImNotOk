@@ -2324,35 +2324,6 @@ end
 		Notify("Changed name tag color", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("crashfps") then
-		-- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(53, 73, 255)
-Frame.Position = UDim2.new(0.248415723, 0, 0.183838382, 0)
-Frame.Size = UDim2.new(0, 120, 0, 79)
-
-TextButton.Parent = ScreenGui
-TextButton.BackgroundColor3 = Color3.fromRGB(79, 161, 216)
-TextButton.Position = UDim2.new(0.266159683, 0, 0.25050506, 0)
-TextButton.Size = UDim2.new(0, 91, 0, 38)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "CRASH SERVER"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.MouseButton1Down:connect(function()
 	while true do
 		workspace.Remote.TeamEvent:FireServer("Bright blue")
 
@@ -2364,18 +2335,9 @@ TextButton.MouseButton1Down:connect(function()
 			end
 		end
 	end
-end)
-TextLabel.Parent = ScreenGui
-TextLabel.BackgroundColor3 = Color3.fromRGB(53, 73, 255)
-TextLabel.BorderColor3 = Color3.fromRGB(53, 73, 255)
-TextLabel.Position = UDim2.new(0.261089981, 0, 0.200000003, 0)
-TextLabel.Size = UDim2.new(0, 100, 0, 14)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "CRASH FPS BY CRAZYMAN"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 12.000
-Notify("Crash gui open", Color3.fromRGB(0, 255, 0), "Success")
-end
+    Notify("Crash gui open", Color3.fromRGB(0, 255, 0), "Success")
+    end
+
 	if Command("print") then
 		print(Message)
 		Notify("Printed", Color3.fromRGB(0, 255, 0), "Success")
