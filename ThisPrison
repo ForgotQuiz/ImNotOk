@@ -1,3 +1,5 @@
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Waiting For The Key (??)', 'All')
+
 local player = game.Players.LocalPlayer
 local yes = "NotWhitelisted"
 
@@ -22,6 +24,14 @@ if yes == "NotWhitelisted" then
            yes = "Whitelisted"
           print(yes)
           loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
+          local executor =
+                is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+                secure_load and "Sentinel" or
+                KRNL_LOADED and "Krnl" or
+                SONA_LOADED and "Sona" or
+                "Lvl 6 Exploit"
+                
+                game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Commands Loaded (6.5) * Using '.. executor .. ' *', 'All')
         end
     end)
 end
