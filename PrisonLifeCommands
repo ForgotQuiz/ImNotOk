@@ -581,7 +581,6 @@ Cmd[#Cmd + 1] =	{Text = "opengui",Title = "Opens the GUI, open"}
 Cmd[#Cmd + 1] =	{Text = "closegui",Title = "Closes the GUI, close"}
 Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "chatnotify",Title = "Chats when player leave / join"}
-Cmd[#Cmd + 1] =	{Text = "unchatnotify / nochatnotify",Title = "Stop chat when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "opengate",Title = "Open the gate"}
 Cmd[#Cmd + 1] =	{Text = "antifell / antivoid",Title = "Activate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
@@ -593,6 +592,7 @@ Cmd[#Cmd + 1] =	{Text = "net / netless",Title = "Loads Netless Script, Aliasses 
 Cmd[#Cmd + 1] =	{Text = "chatbypasser / chatb",Title = "Executes Chat Bypasser, Aliasses chatb"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
 Cmd[#Cmd + 1] =	{Text = "scp / reanim2",Title = "Executes FE SCP, Aliasses reanim2"}
+Cmd[#Cmd + 1] =	{Text = "flinggui / fgui",Title = "Executes Fling GUI, Aliasses fgui"}
 Cmd[#Cmd + 1] =	{Text = "lagbeam / beam2 [plr]",Title = "Shoot a beam to player but lag"}
 Cmd[#Cmd + 1] =	{Text = "crash / beam3 [plr]",Title = "Shoot a beam to player but even more lag"}
 Cmd[#Cmd + 1] = {Text = "antispamarrest",Title = "Activate anti spam arrest"}
@@ -1795,6 +1795,10 @@ end
 	if Command("iplogger") or Command("iplog") then
 		Notify("IpLogger Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/IpLogger'),true))()
+	end
+	if Command("flinggui") or Command("fgui") then
+		Notify("Fling GUI Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FlingGUI'),true))()
 	end
 	if Command("scp") or Command("reanim2") then
 		Notify("FE Scp Loaded", Color3.fromRGB(0, 255 ,0), "Success")
