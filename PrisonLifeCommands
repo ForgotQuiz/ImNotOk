@@ -412,6 +412,7 @@ Cmd[#Cmd + 1] =	{Text = "guard / guards / cop / polices",Title = "Become guard t
 Cmd[#Cmd + 1] =	{Text = "crim / criminals / criminal",Title = "Become criminal team"}
 Cmd[#Cmd + 1] =	{Text = "neutral / neutrals",Title = "Become neutral team"}
 Cmd[#Cmd + 1] =	{Text = "re / refresh",Title = "Respawn on old position"}
+Cmd[#Cmd + 1] =	{Text = "re2",Title = "Respawn reanimations, Aliasses unreanim"}
 Cmd[#Cmd + 1] =	{Text = "res / respawn",Title = "Respawn on respawn pads"}
 Cmd[#Cmd + 1] =	{Text = "goto / to [plr]",Title = "Teleports to the player"}
 Cmd[#Cmd + 1] =	{Text = "bring [plr]",Title = "Teleports player to you"}
@@ -525,6 +526,7 @@ Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell 
 Cmd[#Cmd + 1] =	{Text = "beam [plr]",Title = "Shoot a beam to player"}
 Cmd[#Cmd + 1] =	{Text = "spookyware",Title = "Executes SpookyWare Hub, Aliasses reanim1"}
 Cmd[#Cmd + 1] =	{Text = "fecat",Title = "Executes Fe Cat Script, Aliasses reanim3"}
+Cmd[#Cmd + 1] =	{Text = "net",Title = "Loads Netless Script, Aliasses netless"}
 Cmd[#Cmd + 1] =	{Text = "chatbypasser",Title = "Executes Chat Bypasser, Aliasses chatb"}
 Cmd[#Cmd + 1] =	{Text = "iplogger",Title = "Executes IpLogger, Aliasses iplog"}
 Cmd[#Cmd + 1] =	{Text = "scp",Title = "Executes FE SCP, Aliasses reanim2"}
@@ -1742,6 +1744,24 @@ end
 	if Command("chatbypasser") or Command("chatb") then
 		Notify("Chat Bypasser Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://the-shed.xyz/roblox/scripts/ChatBypass'),true))()
+	end
+	if Command("re2") or Command("unreanim") then
+		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
+			workspace.Remote.loadchar:InvokeServer()
+		else
+			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright orange").Name)
+			local savedcf = GetPos()
+			local savedcamcf = GetCamPos()
+			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really red").Name)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+			workspace.CurrentCamera.CFrame = savedcamcf
+			workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+		end
+		Notify("Unreanimated / Re2", Color3.fromRGB(0, 255, 0), "Success")
+	end
+	if Command("net") or Command("netless") then
+		Notify("Netless Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	    loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
 	end
 
 	if Command("fly") then
