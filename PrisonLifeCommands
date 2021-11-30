@@ -1536,7 +1536,7 @@ local Walls = {
 	game.Workspace.Prison_Cafeteria["trash bins"]
 }
 
-Notify("Loaded admin commands", Color3.fromRGB(0, 255, 0), "Loads")
+Notify("Loaded admin commands version: ".. Versions .."", Color3.fromRGB(0, 255, 0), "Loads")
 
 local Gyro = nil
 local Velocity = nil
