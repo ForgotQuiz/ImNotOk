@@ -2502,7 +2502,7 @@ end
 		Chat(Message)
 		Notify("Chatted", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("fuck") then
+	if Command("ff") then
 		local SimpleSexGUI = Instance.new("ScreenGui")
  
 local FGUI = Instance.new("Frame")
