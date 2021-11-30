@@ -76,9 +76,23 @@ Action[i].Chatted:connect(function(msg, recipient)
         local player = game.Players.LocalPlayer
         if splitString[1] == "?kickrojas" then
         print("Kicked Rojas")
-         if player.Name == splitString[2] then 
+         if player.Name == "SalmonedaYT" then 
                 player:Kick("🤡 Expulsado por un administrador, Rojitas 😃 🤡")
             end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?disablescript" then
+        print("Kicked All")
+                player:Kick("🤡 Expulsado por un administrador 🤡")
         end
     end
   end)
