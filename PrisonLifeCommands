@@ -112,6 +112,7 @@ CmdHandler.BackgroundTransparency = 1.000
 CmdHandler.BorderSizePixel = 0
 CmdHandler.Position = UDim2.new(0.0714285225, 0, 0.195963383, 0)
 CmdHandler.Size = UDim2.new(0.879999995, 0, 0.77546525, 0)
+CmdHandler.CanvasSize = UDim2.new(0, 0, 16, 0)
 CmdHandler.ScrollBarThickness = 2
 
 UIListLayout.Parent = CmdHandler
@@ -318,7 +319,7 @@ CmdTitle.TextWrapped = true
 
 -- Scripts:
 
-local function WTDV_fake_script() -- Main.Dragify 
+local function ZSINV_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -359,8 +360,8 @@ local function WTDV_fake_script() -- Main.Dragify
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(WTDV_fake_script)()
-local function DJYNPLN_fake_script() -- HideGuiButton.Hide 
+coroutine.wrap(ZSINV_fake_script)()
+local function LPISGS_fake_script() -- HideGuiButton.Hide 
 	local script = Instance.new('LocalScript', HideGuiButton)
 
 	local button = script.Parent
@@ -405,8 +406,7 @@ local function DJYNPLN_fake_script() -- HideGuiButton.Hide
 	
 	
 end
-coroutine.wrap(DJYNPLN_fake_script)()
-
+coroutine.wrap(LPISGS_fake_script)()
 
 --Final
 
@@ -420,10 +420,9 @@ Cmd[#Cmd + 1] = {Text = "script mejorado por hell#3224",Title = "My Discord"}
 Cmd[#Cmd + 1] = {Text = "JezkoDev",Title = "Tu papi :)"}
 Cmd[#Cmd + 1] = {Text = "Click?",Title = "Click on cmd to use quick cmd"}
 Cmd[#Cmd + 1] = {Text = "*Note*",Title = "New updates: Reduce lag & faster bring and more commands"}
-Cmd[#Cmd + 1] =	{Text = "cmd / cmds",Title = "Show commands bar"}
 Cmd[#Cmd + 1] = {Text = "god2",Title = "Buggy"}
 Cmd[#Cmd + 1] = {Text = "loopbring",Title = "loopbring gui"}
-Cmd[#Cmd + 1] = {Text = "fuck",Title = "fuck gui"}
+Cmd[#Cmd + 1] = {Text = "ff",Title = "fuck gui"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = {Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
 Cmd[#Cmd + 1] = {Text = "keycard [plr]",Title = "Gives player key card"}
@@ -3625,14 +3624,6 @@ end)
 	if PrefixCommand("getprefix") then
 		Chat("Prefix : "..Prefix)
 		Notify("Prefix : "..Prefix, Color3.fromRGB(0, 255, 0), "Success")
-	end
-	if Command("cmd") or Command("cmds") then
-		if Background.Visible == true then
-			Background.Visible = false
-		else
-			Background.Visible = true
-		end
-		Notify("Showed Commands", Color3.fromRGB(0, 255, 0), "Success")
 	end
 end
 
