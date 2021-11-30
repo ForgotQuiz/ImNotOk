@@ -41,9 +41,10 @@ local Notify1 = Instance.new("TextLabel")
 local Background02 = Instance.new("Frame")
 local Execute = Instance.new("TextBox")
 local DecorationLine = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
+local PrisonLifeButton = Instance.new("TextButton")
 local TitleXYZ = Instance.new("TextLabel")
 local DecorationLine_2 = Instance.new("Frame")
+local HideGuiButton = Instance.new("TextButton")
 local Background3 = Instance.new("Frame")
 local Topbar = Instance.new("TextLabel")
 local CmdTitle = Instance.new("TextLabel")
@@ -238,15 +239,16 @@ DecorationLine.BorderSizePixel = 0
 DecorationLine.Position = UDim2.new(7.86249217e-08, 0, 0, 0)
 DecorationLine.Size = UDim2.new(0, 388, 0, 1)
 
-TextButton.Parent = Main
-TextButton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.873699844, 0, 0.115646258, 0)
-TextButton.Size = UDim2.new(0, 78, 0, 27)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Prison Life"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextSize = 14.000
+PrisonLifeButton.Name = "PrisonLifeButton"
+PrisonLifeButton.Parent = Main
+PrisonLifeButton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+PrisonLifeButton.BorderSizePixel = 0
+PrisonLifeButton.Position = UDim2.new(0.873699844, 0, 0.115646258, 0)
+PrisonLifeButton.Size = UDim2.new(0, 78, 0, 27)
+PrisonLifeButton.Font = Enum.Font.SourceSans
+PrisonLifeButton.Text = "Prison Life"
+PrisonLifeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+PrisonLifeButton.TextSize = 14.000
 
 TitleXYZ.Name = "TitleXYZ"
 TitleXYZ.Parent = Main
@@ -266,6 +268,19 @@ DecorationLine_2.BackgroundColor3 = Color3.fromRGB(255, 120, 57)
 DecorationLine_2.BorderSizePixel = 0
 DecorationLine_2.Position = UDim2.new(0.000102884951, 0, 0.0911245421, 0)
 DecorationLine_2.Size = UDim2.new(0, 672, 0, 1)
+
+HideGuiButton.Name = "HideGuiButton"
+HideGuiButton.Parent = Main
+HideGuiButton.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+HideGuiButton.BorderSizePixel = 0
+HideGuiButton.Position = UDim2.new(0.943536401, 0, 0, 0)
+HideGuiButton.Size = UDim2.new(0, 38, 0, 27)
+HideGuiButton.Font = Enum.Font.SourceSans
+HideGuiButton.Text = "M"
+HideGuiButton.TextColor3 = Color3.fromRGB(170, 0, 0)
+HideGuiButton.TextScaled = true
+HideGuiButton.TextSize = 14.000
+HideGuiButton.TextWrapped = true
 
 Background3.Name = "Background3"
 Background3.Parent = CmdGui
@@ -303,7 +318,7 @@ CmdTitle.TextWrapped = true
 
 -- Scripts:
 
-local function MRLKB_fake_script() -- Main.Dragify 
+local function WTDV_fake_script() -- Main.Dragify 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -344,7 +359,53 @@ local function MRLKB_fake_script() -- Main.Dragify
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(MRLKB_fake_script)()
+coroutine.wrap(WTDV_fake_script)()
+local function DJYNPLN_fake_script() -- HideGuiButton.Hide 
+	local script = Instance.new('LocalScript', HideGuiButton)
+
+	local button = script.Parent
+	local main = script.Parent.Parent.Parent.Main
+	local player = game.Players.LocalPlayer
+	
+	button.MouseButton1Click:Connect(function()
+		main.Visible = false
+		game:GetService("StarterGui"):SetCore("SendNotification", { 
+			Title = "Gui Hide";
+			Text = "To 0pen the GUI again, command: opengui";
+			Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+		Duration = 10;
+	end)
+	
+	player.Chatted:connect(function(cht)
+		if cht:match("opengui") then
+			main.Visible = true
+		elseif cht:match("open")then
+			main.Visible = true
+		end
+		
+		if cht:match("closegui") then
+			main.Visible = false
+			game:GetService("StarterGui"):SetCore("SendNotification", { 
+				Title = "Gui Hide";
+				Text = "To 0pen the GUI again, command: opengui";
+				Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+			Duration = 10;
+		elseif cht:match("close")then
+			main.Visible = false
+			game:GetService("StarterGui"):SetCore("SendNotification", { 
+				Title = "Gui Hide";
+				Text = "To 0pen the GUI again, command: opengui";
+				Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+			Duration = 10;
+		end
+	end)
+	
+	
+	
+	
+	
+end
+coroutine.wrap(DJYNPLN_fake_script)()
 
 
 --Final
@@ -517,6 +578,8 @@ Cmd[#Cmd + 1] =	{Text = "notify",Title = "Send a message when player leave / joi
 Cmd[#Cmd + 1] =	{Text = "nonotify",Title = "Stop send a message when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "copychat",Title = "Copies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "infiniteyield",Title = "Executes Infinite Yield, Aliasses yield"}
+Cmd[#Cmd + 1] =	{Text = "opengui",Title = "Opens the GUI, open"}
+Cmd[#Cmd + 1] =	{Text = "closegui",Title = "Closes the GUI, close"}
 Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "chatnotify",Title = "Chats when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "unchatnotify / nochatnotify",Title = "Stop chat when player leave / join"}
