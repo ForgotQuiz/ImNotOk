@@ -460,13 +460,13 @@ Cmd[#Cmd + 1] = {Text = "taseall",Title = "Tase all everyone"}
 Cmd[#Cmd + 1] =	{Text = "loopkill / lk [plr]",Title = "Loop kills player"}
 Cmd[#Cmd + 1] =	{Text = "unloopkill / unlk [plr]",Title = "Unloop kills player"}
 Cmd[#Cmd + 1] =	{Text = "loopkillall / lksall",Title = "Loop kills all players"}
-Cmd[#Cmd + 1] =	{Text = "loopkillguard / lkguards",Title = "Loop kills all guards"}
-Cmd[#Cmd + 1] =	{Text = "loopkillinmate / lkinmates",Title = "Loop kills all inmates"}
-Cmd[#Cmd + 1] =	{Text = "loopkillcriminal / lkcriminals",Title = "Loop kills all criminals"}
+Cmd[#Cmd + 1] =	{Text = "loopkillguards / lkguards",Title = "Loop kills all guards"}
+Cmd[#Cmd + 1] =	{Text = "loopkillinmates / lkinmates",Title = "Loop kills all inmates"}
+Cmd[#Cmd + 1] =	{Text = "loopkillcriminals / lkcriminals",Title = "Loop kills all criminals"}
 Cmd[#Cmd + 1] =	{Text = "unloopkillall / unlkall",Title = "Unloop kills all players"}
-Cmd[#Cmd + 1] =	{Text = "unloopkillguard / unlkguard",Title = "Unloop kills all guards"}
-Cmd[#Cmd + 1] =	{Text = "unloopkillinmate / unkinmates",Title = "Unloop kills all inmates"}
-Cmd[#Cmd + 1] =	{Text = "unloopkillcriminal / unlkcriminals",Title = "Unloop kills all criminals"}
+Cmd[#Cmd + 1] =	{Text = "unloopkillguards / unlkguard",Title = "Unloop kills all guards"}
+Cmd[#Cmd + 1] =	{Text = "unloopkillinmates / unkinmates",Title = "Unloop kills all inmates"}
+Cmd[#Cmd + 1] =	{Text = "unloopkillcriminals / unlkcriminals",Title = "Unloop kills all criminals"}
 Cmd[#Cmd + 1] =	{Text = "inmate / inmates / prisoner / prisoners",Title = "Become inmate team"}
 Cmd[#Cmd + 1] =	{Text = "guard / guards / cop / polices",Title = "Become guard team"}
 Cmd[#Cmd + 1] =	{Text = "crim / criminals / criminal",Title = "Become criminal team"}
@@ -2723,27 +2723,27 @@ end)
 			Notify("No player found / Player has no loop kills", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	if Command("loopkillguard") or Command("lkguards") or Command("loopkillsguard") or Command("loopkillsguards") or Command("loopkillcop") or Command("loopkillpolices") or Command("loopkillspolices") then
+	if Command("loopkillguards") or Command("lkguards") or Command("loopkillsguard") or Command("loopkillsguards") or Command("loopkillcop") or Command("loopkillpolices") or Command("loopkillspolices") then
 		States.LoopKill_Guards = true
 		Notify("Looping kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("unloopkillguard") or Command("unlkguards") or Command("unloopkillsguard") or Command("unloopkillsguards") or Command("unloopkillcop") or Command("unloopkillpolices") or Command("unloopkillspolices") then
+	if Command("unloopkillguards") or Command("unlkguards") or Command("unloopkillsguard") or Command("unloopkillsguards") or Command("unloopkillcop") or Command("unloopkillpolices") or Command("unloopkillspolices") then
 		States.LoopKill_Guards = false
 		Notify("Unloop kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("loopkillinmate") or Command("lkinmates") or Command("loopkillsinmate") or Command("loopkillsinmates") or Command("loopkillprisoner") or Command("loopkillprisoners") then
+	if Command("loopkillinmates") or Command("lkinmates") or Command("loopkillsinmate") or Command("loopkillsinmates") or Command("loopkillprisoner") or Command("loopkillprisoners") then
 		States.LoopKill_Inmates = true
 		Notify("Looping kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("unloopkillinmate") or Command("unlkinmates") or Command("unloopkillsinmate") or Command("unloopkillsinmates") or Command("unloopkillprisoner") or Command("unloopkillprisoners") then
+	if Command("unloopkillinmates") or Command("unlkinmates") or Command("unloopkillsinmate") or Command("unloopkillsinmates") or Command("unloopkillprisoner") or Command("unloopkillprisoners") then
 		States.LoopKill_Inmates = false
 		Notify("Unloop kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("loopkillcriminal") or Command("lkcriminals") or Command("loopkillscriminal") or Command("loopkillscriminals") or Command("loopkillcrim") or Command("loopkillcrims") then
+	if Command("loopkillcriminals") or Command("lkcriminals") or Command("loopkillscriminal") or Command("loopkillscriminals") or Command("loopkillcrim") or Command("loopkillcrims") then
 		States.LoopKill_Criminals = true
 		Notify("Looping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("unloopkillcriminal") or Command("unlkcriminals") or Command("unloopkillscriminal") or Command("unloopkillscrriminals") or Command("unloopkillcrim") or Command("unloopkillcrims") then
+	if Command("unloopkillcriminals") or Command("unlkcriminals") or Command("unloopkillscriminal") or Command("unloopkillscrriminals") or Command("unloopkillcrim") or Command("unloopkillcrims") then
 		States.LoopKill_Criminals = false
 		Notify("Unlooping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
