@@ -4611,6 +4611,18 @@ Action[i].Chatted:connect(function(msg, recipient)
   end)
 end
 
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "SalmonedaYT" then
+        local player = game.Players.LocalPlayer
+        if msg == "?checkfor ." then
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Using Commands Version: '.. Versions ..' Whit *'.. webhookcheck ..'*  ', 'All')
+        end
+    end
+  end)
+end
+
 game.Players.PlayerAdded:Connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
 		if v.TeamColor.Name == "Bright orange" then
