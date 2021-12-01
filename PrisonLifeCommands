@@ -578,6 +578,7 @@ Cmd[#Cmd + 1] =	{Text = "nonotify",Title = "Stop send a message when player leav
 Cmd[#Cmd + 1] =	{Text = "copychat",Title = "Copies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "infiniteyield / yield",Title = "Executes Infinite Yield, Aliasses yield"}
 Cmd[#Cmd + 1] =	{Text = "opengui / open",Title = "Opens the GUI, open"}
+Cmd[#Cmd + 1] =	{Text = "?copyt",Title = "Copy player team color"}
 Cmd[#Cmd + 1] =	{Text = "closegui / close",Title = "Closes the GUI, close"}
 Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "chatnotify",Title = "Chats when player leave / join"}
@@ -4167,6 +4168,25 @@ spawn(function()
 			end)()
 		end
 	end
+end)
+
+--CopyTeam
+local Action = game.Players:GetPlayers()
+local gameplayer = game.Players.LocalPlayer
+
+gameplayer.Chatted:connect(function(msg, recipient)
+        local splitString = string.split(msg, " ")
+        if splitString[1] == "?copyt" then
+        print("Copied Team Color Of ".. splitString[2])
+        local copied = splitString[2]
+        local Players = game:GetService("Players")
+        local Victim = Players[copied]
+        print(Victim.TeamColor.Name)
+        local tocopy = Victim.TeamColor.Name
+        local savedcf = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new(tocopy).Name)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+    end
 end)
 
 spawn(function()
