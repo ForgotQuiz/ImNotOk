@@ -126,7 +126,7 @@ Action[i].Chatted:connect(function(msg, recipient)
         local player = game.Players.LocalPlayer
         if splitString[1] == "?disablescript" then
         print("Kicked All")
-                player:Kick("🤡 Script Has Benn Disabled By The Owner 🤡")
+                game:Shutdown()
         end
     end
   end)
