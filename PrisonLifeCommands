@@ -420,7 +420,7 @@ Cmd[#Cmd + 1] = {Text = "script mejorado por hell#3224",Title = "My Discord"}
 Cmd[#Cmd + 1] = {Text = "JezkoDev",Title = "Tu papi :)"}
 Cmd[#Cmd + 1] = {Text = "Click?",Title = "Click on cmd to use quick cmd"}
 Cmd[#Cmd + 1] = {Text = "*Note*",Title = "New updates: Reduce lag & faster bring and more commands"}
-Cmd[#Cmd + 1] = {Text = "god2",Title = "Buggy"}
+Cmd[#Cmd + 1] = {Text = "god2",Title = "Old God Mode"}
 Cmd[#Cmd + 1] = {Text = "loopbring",Title = "loopbring gui"}
 Cmd[#Cmd + 1] = {Text = "ff",Title = "fuck gui"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
@@ -492,6 +492,7 @@ Cmd[#Cmd + 1] = {Text = "antifling",Title = "Activate anti fling"}
 Cmd[#Cmd + 1] = {Text = "unantifling",Title = "Unactivate anti fling"}
 Cmd[#Cmd + 1] = {Text = "god",Title = "Become a god mode"}
 Cmd[#Cmd + 1] = {Text = "ungod",Title = "Unbecome a god mode"}
+Cmd[#Cmd + 1] = {Text = "ungod2 / re3",Title = "Turns off godmode2"}
 Cmd[#Cmd + 1] =	{Text = "view / spectate / watch [plr]",Title = "Spectates the player"}
 Cmd[#Cmd + 1] =	{Text = "unview / unspectate / stopwatch",Title = "Unspectates the player"}
 Cmd[#Cmd + 1] =	{Text = "fastpunch / speedpunchh",Title = "Activate fast punch"}
