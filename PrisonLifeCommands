@@ -3252,6 +3252,10 @@ end)
 		end
 		Notify("Turn god mode off", Color3.fromRGB(0, 255, 0), "Success")
 	end
+	if Command("ungod2") or Command("re3") then
+		States.God_Mode = false
+		Notify("Turn god mode off", Color3.fromRGB(0, 255, 0), "Success")
+	end
 		
 	
 	if Command("arrest") or Command("handcuffs") then
