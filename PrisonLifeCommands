@@ -592,6 +592,7 @@ Cmd[#Cmd + 1] =	{Text = "nonotify",Title = "Stop send a message when player leav
 Cmd[#Cmd + 1] =	{Text = "copychat",Title = "Copies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "infiniteyield / yield",Title = "Executes Infinite Yield, Aliasses yield"}
 Cmd[#Cmd + 1] =	{Text = "givemelee / melee",Title = "Gives tools"}
+Cmd[#Cmd + 1] =	{Text = "clickarrest / carrest",Title = "Loads Click Arrest"}
 Cmd[#Cmd + 1] =	{Text = "clearinv / invc",Title = "Clear Inventory"}
 Cmd[#Cmd + 1] =	{Text = "spawntools / sptools",Title = "Spawn Tools"}
 Cmd[#Cmd + 1] =	{Text = "opengui / open",Title = "Opens the GUI, open"}
@@ -1806,6 +1807,15 @@ end
 	if Command("infiniteyield") or Command("yield") then
 		Notify("Infinite Yield Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	end
+	if Command("clickarrest") or Command("carrest") then
+		Notify("Click Arrest Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	        local mouse = game.Players.LocalPlayer:GetMouse()
+            local arrestEvent = game.Workspace.Remote.arrest
+            mouse.Button1Down:connect(function()
+            local obj = mouse.Target
+            local response = arrestEvent:InvokeServer(obj)
+        end)
 	end
 	if Command("clearinv") or Command("invc") then
 		Notify("Inventory Clear Sucess", Color3.fromRGB(0, 255 ,0), "Success")
