@@ -9,9 +9,9 @@ CmdText.Parent = nil
 CmdText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CmdText.BackgroundTransparency = 1.000
 CmdText.BorderSizePixel = 0
-CmdText.Size = UDim2.new(0, 142, 0, 18)
+CmdText.Size = UDim2.new(1, 0, 0.00400000019, 0)
 CmdText.Font = Enum.Font.SourceSans
-CmdText.Text = "Text"
+CmdText.Text = "versions 6.8"
 CmdText.TextColor3 = Color3.fromRGB(255, 255, 255)
 CmdText.TextScaled = true
 CmdText.TextSize = 1.000
@@ -24,13 +24,17 @@ CmdText.TextWrapped = true
 -- Instances:
 
 local CmdGui = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Background = Instance.new("Frame")
-local FindCmd = Instance.new("TextBox")
-local Minum = Instance.new("TextButton")
-local Close = Instance.new("TextButton")
-local CmdHandler = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
+local A1Main = Instance.new("Frame")
+local Menu1 = Instance.new("TextButton")
+local Menu2 = Instance.new("TextButton")
+local Menu3 = Instance.new("TextButton")
+local Menu4 = Instance.new("TextButton")
+local ProfileBox = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local ExecutorFrame = Instance.new("Frame")
+local Background02 = Instance.new("Frame")
+local Execute = Instance.new("TextBox")
 local Background03 = Instance.new("Frame")
 local Notify6 = Instance.new("TextLabel")
 local Notify5 = Instance.new("TextLabel")
@@ -38,13 +42,12 @@ local Notify4 = Instance.new("TextLabel")
 local Notify3 = Instance.new("TextLabel")
 local Notify2 = Instance.new("TextLabel")
 local Notify1 = Instance.new("TextLabel")
-local Background02 = Instance.new("Frame")
-local Execute = Instance.new("TextBox")
-local DecorationLine = Instance.new("Frame")
-local PrisonLifeButton = Instance.new("TextButton")
-local TitleXYZ = Instance.new("TextLabel")
-local DecorationLine_2 = Instance.new("Frame")
-local HideGuiButton = Instance.new("TextButton")
+local Background = Instance.new("Frame")
+local FindCmd = Instance.new("TextBox")
+local Minum = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local CmdHandler = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
 local Background3 = Instance.new("Frame")
 local Topbar = Instance.new("TextLabel")
 local CmdTitle = Instance.new("TextLabel")
@@ -55,85 +58,145 @@ CmdGui.Name = "CmdGui"
 CmdGui.Parent = game.CoreGui
 CmdGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Main.Name = "Main"
-Main.Parent = CmdGui
-Main.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.110058308, 0, 0.173285201, 0)
-Main.Size = UDim2.new(0, 673, 0, 294)
+A1Main.Name = "A1Main"
+A1Main.Parent = CmdGui
+A1Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+A1Main.BackgroundTransparency = 1.000
+A1Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+A1Main.Position = UDim2.new(0, 0, 0.489771366, 0)
+A1Main.Size = UDim2.new(0.466060609, 0, 0.495788217, 0)
 
-Background.Name = "Background"
-Background.Parent = Main
-Background.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Background.BorderSizePixel = 0
-Background.Draggable = true
-Background.Position = UDim2.new(1.01027203, -292, -0.908637762, 294)
-Background.Size = UDim2.new(0.284864873, 0, 0.908637762, 0)
+Menu1.Name = "Menu1"
+Menu1.Parent = A1Main
+Menu1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Menu1.BackgroundTransparency = 0.500
+Menu1.BorderSizePixel = 0
+Menu1.Position = UDim2.new(0.0104031209, 0, 0.864077687, 0)
+Menu1.Size = UDim2.new(0.170351103, 0, 0.109223299, 0)
+Menu1.Font = Enum.Font.SourceSansBold
+Menu1.Text = "Executor"
+Menu1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Menu1.TextScaled = true
+Menu1.TextSize = 25.000
+Menu1.TextWrapped = true
 
-FindCmd.Name = "FindCmd"
-FindCmd.Parent = Background
-FindCmd.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-FindCmd.BorderColor3 = Color3.fromRGB(0, 255, 0)
-FindCmd.BorderSizePixel = 0
-FindCmd.Position = UDim2.new(0.0714285225, 0, 0.0702347085, 0)
-FindCmd.Size = UDim2.new(0.860000074, 0, 0.102982402, 0)
-FindCmd.Font = Enum.Font.SourceSans
-FindCmd.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-FindCmd.PlaceholderText = "Search For Command"
-FindCmd.Text = ""
-FindCmd.TextColor3 = Color3.fromRGB(255, 255, 255)
-FindCmd.TextSize = 14.000
-FindCmd.TextWrapped = true
+Menu2.Name = "Menu2"
+Menu2.Parent = A1Main
+Menu2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Menu2.BackgroundTransparency = 0.500
+Menu2.BorderSizePixel = 0
+Menu2.Position = UDim2.new(0.0104031209, 0, 0.706310689, 0)
+Menu2.Size = UDim2.new(0.170351103, 0, 0.109223299, 0)
+Menu2.Font = Enum.Font.SourceSansBold
+Menu2.Text = "Console"
+Menu2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Menu2.TextScaled = true
+Menu2.TextSize = 25.000
+Menu2.TextWrapped = true
 
-Minum.Name = "Minum"
-Minum.Parent = Background
-Minum.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Minum.Size = UDim2.new(0, 34, 0, 9)
-Minum.Visible = false
-Minum.Font = Enum.Font.SourceSans
-Minum.TextColor3 = Color3.fromRGB(0, 0, 0)
-Minum.TextSize = 14.000
+Menu3.Name = "Menu3"
+Menu3.Parent = A1Main
+Menu3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Menu3.BackgroundTransparency = 0.500
+Menu3.BorderSizePixel = 0
+Menu3.Position = UDim2.new(0.0104031209, 0, 0.546116531, 0)
+Menu3.Size = UDim2.new(0.170351103, 0, 0.109223299, 0)
+Menu3.Font = Enum.Font.SourceSansBold
+Menu3.Text = "ChatLog"
+Menu3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Menu3.TextScaled = true
+Menu3.TextSize = 25.000
+Menu3.TextWrapped = true
 
-Close.Name = "Close"
-Close.Parent = Background
-Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Close.Position = UDim2.new(0.251172602, 0, 0, 0)
-Close.Size = UDim2.new(0, 17, 0, 9)
-Close.Visible = false
-Close.Font = Enum.Font.SourceSans
-Close.TextColor3 = Color3.fromRGB(0, 0, 0)
-Close.TextSize = 14.000
+Menu4.Name = "Menu4"
+Menu4.Parent = A1Main
+Menu4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Menu4.BackgroundTransparency = 0.500
+Menu4.BorderSizePixel = 0
+Menu4.Position = UDim2.new(0.00910273101, 0, 0.385922343, 0)
+Menu4.Size = UDim2.new(0.170351103, 0, 0.109223299, 0)
+Menu4.Font = Enum.Font.SourceSansBold
+Menu4.Text = "Commands"
+Menu4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Menu4.TextScaled = true
+Menu4.TextSize = 25.000
+Menu4.TextWrapped = true
 
-CmdHandler.Name = "CmdHandler"
-CmdHandler.Parent = Background
-CmdHandler.Active = true
-CmdHandler.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CmdHandler.BackgroundTransparency = 1.000
-CmdHandler.BorderSizePixel = 0
-CmdHandler.Position = UDim2.new(0.0714285225, 0, 0.195963383, 0)
-CmdHandler.Size = UDim2.new(0.879999995, 0, 0.77546525, 0)
-CmdHandler.CanvasSize = UDim2.new(0, 0, 16, 0)
-CmdHandler.ScrollBarThickness = 2
+ProfileBox.Name = "ProfileBox"
+ProfileBox.Parent = A1Main
+ProfileBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ProfileBox.BackgroundTransparency = 1.000
+ProfileBox.BorderSizePixel = 0
+ProfileBox.Position = UDim2.new(0.0104031209, 0, 0.0315533988, 0)
+ProfileBox.Size = UDim2.new(0.169050708, 0, 0.315533966, 0)
 
-UIListLayout.Parent = CmdHandler
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+ImageLabel.Parent = ProfileBox
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.192307696, 0, 0.0461538471, 0)
+ImageLabel.Size = UDim2.new(0.600000024, 0, 0.63846153, 0)
+ImageLabel.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" .. tostring(game:GetService("Players").LocalPlayer.Name)
+
+TextLabel.Parent = ProfileBox
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 0.746153831, 0)
+TextLabel.Size = UDim2.new(1, 0, 0.230769232, 0)
+TextLabel.Font = Enum.Font.Arial
+TextLabel.Text = game.Players.LocalPlayer.Name
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 17.000
+TextLabel.TextWrapped = true
+
+ExecutorFrame.Name = "ExecutorFrame"
+ExecutorFrame.Parent = A1Main
+ExecutorFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ExecutorFrame.BorderSizePixel = 0
+ExecutorFrame.Position = UDim2.new(0.191157341, 0, 0.864077687, 0)
+ExecutorFrame.Size = UDim2.new(0.325097531, 0, 0.109223299, 0)
+
+Background02.Name = "Background02"
+Background02.Parent = ExecutorFrame
+Background02.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Background02.BackgroundTransparency = 0.500
+Background02.BorderSizePixel = 0
+Background02.Draggable = true
+Background02.Size = UDim2.new(1, 0, 1, 0)
+
+Execute.Name = "Execute"
+Execute.Parent = Background02
+Execute.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Execute.BackgroundTransparency = 0.700
+Execute.BorderColor3 = Color3.fromRGB(17, 17, 17)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.0600000024, 0, 0.13333334, 0)
+Execute.Size = UDim2.new(0.879999995, 0, 0.733333349, 0)
+Execute.Font = Enum.Font.SourceSans
+Execute.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Execute.PlaceholderText = "Press : To Enter"
+Execute.Text = ""
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextScaled = true
+Execute.TextSize = 16.000
+Execute.TextWrapped = true
 
 Background03.Name = "Background03"
-Background03.Parent = Main
+Background03.Parent = A1Main
 Background03.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Background03.BackgroundTransparency = 0.300
 Background03.BorderSizePixel = 0
 Background03.Draggable = true
-Background03.Position = UDim2.new(-0.141158983, 95, -0.177345231, 79)
-Background03.Size = UDim2.new(0.576732874, 0, 0.707858741, 0)
+Background03.Position = UDim2.new(0.191157341, 0, 0.385922343, 0)
+Background03.Size = UDim2.new(0.325097531, 0, 0.45873785, 0)
 
 Notify6.Name = "Notify6"
 Notify6.Parent = Background03
 Notify6.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify6.BackgroundTransparency = 1.000
 Notify6.BorderSizePixel = 0
-Notify6.Position = UDim2.new(0, 0, -0.00512826676, 0)
-Notify6.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify6.Font = Enum.Font.GothamBlack
+Notify6.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify6.Font = Enum.Font.SourceSans
 Notify6.Text = ""
 Notify6.TextColor3 = Color3.fromRGB(255, 255, 255)
 Notify6.TextScaled = true
@@ -145,9 +208,9 @@ Notify5.Parent = Background03
 Notify5.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify5.BackgroundTransparency = 1.000
 Notify5.BorderSizePixel = 0
-Notify5.Position = UDim2.new(0, 0, 0.162938967, 0)
-Notify5.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify5.Font = Enum.Font.GothamBlack
+Notify5.Position = UDim2.new(0, 0, 0.158730164, 0)
+Notify5.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify5.Font = Enum.Font.SourceSans
 Notify5.Text = ""
 Notify5.TextColor3 = Color3.fromRGB(255, 255, 255)
 Notify5.TextScaled = true
@@ -159,9 +222,9 @@ Notify4.Parent = Background03
 Notify4.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify4.BackgroundTransparency = 1.000
 Notify4.BorderSizePixel = 0
-Notify4.Position = UDim2.new(0, 0, 0.331006199, 0)
-Notify4.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify4.Font = Enum.Font.GothamBlack
+Notify4.Position = UDim2.new(0, 0, 0.322751313, 0)
+Notify4.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify4.Font = Enum.Font.SourceSans
 Notify4.Text = ""
 Notify4.TextColor3 = Color3.fromRGB(255, 255, 255)
 Notify4.TextScaled = true
@@ -173,9 +236,9 @@ Notify3.Parent = Background03
 Notify3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify3.BackgroundTransparency = 1.000
 Notify3.BorderSizePixel = 0
-Notify3.Position = UDim2.new(0, 0, 0.499073625, 0)
-Notify3.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify3.Font = Enum.Font.GothamBlack
+Notify3.Position = UDim2.new(0, 0, 0.492063493, 0)
+Notify3.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify3.Font = Enum.Font.SourceSans
 Notify3.Text = ""
 Notify3.TextColor3 = Color3.fromRGB(255, 255, 255)
 Notify3.TextScaled = true
@@ -187,9 +250,9 @@ Notify2.Parent = Background03
 Notify2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify2.BackgroundTransparency = 1.000
 Notify2.BorderSizePixel = 0
-Notify2.Position = UDim2.new(0, 0, 0.667140841, 0)
-Notify2.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify2.Font = Enum.Font.GothamBlack
+Notify2.Position = UDim2.new(0, 0, 0.661375642, 0)
+Notify2.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify2.Font = Enum.Font.SourceSans
 Notify2.Text = ""
 Notify2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Notify2.TextScaled = true
@@ -201,103 +264,95 @@ Notify1.Parent = Background03
 Notify1.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Notify1.BackgroundTransparency = 1.000
 Notify1.BorderSizePixel = 0
-Notify1.Position = UDim2.new(0, 0, 0.835208058, 0)
-Notify1.Size = UDim2.new(1, 0, 0.168067217, 0)
-Notify1.Font = Enum.Font.GothamBlack
+Notify1.Position = UDim2.new(0, 0, 0.825396836, 0)
+Notify1.Size = UDim2.new(0.995999992, 0, 0.164021164, 0)
+Notify1.Font = Enum.Font.SourceSans
 Notify1.Text = ""
 Notify1.TextColor3 = Color3.fromRGB(0, 255, 0)
 Notify1.TextScaled = true
 Notify1.TextSize = 14.000
 Notify1.TextWrapped = true
 
-Background02.Name = "Background02"
-Background02.Parent = Main
-Background02.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Background02.BorderSizePixel = 0
-Background02.Draggable = true
-Background02.Position = UDim2.new(0.29420501, -198, 0.682616889, 33)
-Background02.Size = UDim2.new(0.576733053, 0, 0.205138281, 0)
+Background.Name = "Background"
+Background.Parent = A1Main
+Background.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Background.BackgroundTransparency = 0.200
+Background.BorderSizePixel = 0
+Background.Draggable = true
+Background.Position = UDim2.new(0.526657999, 0, 0.385922343, 0)
+Background.Size = UDim2.new(0.241872564, 0, 0.592233002, 0)
 
-Execute.Name = "Execute"
-Execute.Parent = Background02
-Execute.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Execute.BorderColor3 = Color3.fromRGB(17, 17, 17)
-Execute.BorderSizePixel = 0
-Execute.Position = UDim2.new(0.0985145867, 0, 0.189209878, 0)
-Execute.Size = UDim2.new(0.799261212, 0, 0.618641734, 0)
-Execute.Font = Enum.Font.SourceSans
-Execute.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-Execute.PlaceholderText = "Press : To Enter"
-Execute.Text = ""
-Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
-Execute.TextSize = 16.000
-Execute.TextWrapped = true
+FindCmd.Name = "FindCmd"
+FindCmd.Parent = Background
+FindCmd.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+FindCmd.BackgroundTransparency = 0.500
+FindCmd.BorderColor3 = Color3.fromRGB(0, 255, 0)
+FindCmd.BorderSizePixel = 0
+FindCmd.Position = UDim2.new(0.0215053763, 0, 0.00819672085, 0)
+FindCmd.Size = UDim2.new(0.930107534, 0, 0.13934426, 0)
+FindCmd.Font = Enum.Font.Ubuntu
+FindCmd.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+FindCmd.PlaceholderText = "Search For Command"
+FindCmd.Text = ""
+FindCmd.TextColor3 = Color3.fromRGB(255, 255, 255)
+FindCmd.TextScaled = true
+FindCmd.TextSize = 14.000
+FindCmd.TextWrapped = true
 
-DecorationLine.Name = "DecorationLine"
-DecorationLine.Parent = Background02
-DecorationLine.BackgroundColor3 = Color3.fromRGB(255, 120, 57)
-DecorationLine.BorderSizePixel = 0
-DecorationLine.Position = UDim2.new(7.86249217e-08, 0, 0, 0)
-DecorationLine.Size = UDim2.new(0, 388, 0, 1)
+Minum.Name = "Minum"
+Minum.Parent = Background
+Minum.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Minum.Size = UDim2.new(0.188172042, 0, 0.0286885239, 0)
+Minum.Visible = false
+Minum.Font = Enum.Font.SourceSans
+Minum.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minum.TextScaled = true
+Minum.TextSize = 14.000
+Minum.TextWrapped = true
 
-PrisonLifeButton.Name = "PrisonLifeButton"
-PrisonLifeButton.Parent = Main
-PrisonLifeButton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-PrisonLifeButton.BorderSizePixel = 0
-PrisonLifeButton.Position = UDim2.new(0.873699844, 0, 0.115646258, 0)
-PrisonLifeButton.Size = UDim2.new(0, 78, 0, 27)
-PrisonLifeButton.Font = Enum.Font.SourceSans
-PrisonLifeButton.Text = "Prison Life"
-PrisonLifeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-PrisonLifeButton.TextSize = 14.000
+Close.Name = "Close"
+Close.Parent = Background
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.Position = UDim2.new(0.241935477, 0, 0, 0)
+Close.Size = UDim2.new(0.0913978517, 0, 0.0286885239, 0)
+Close.Visible = false
+Close.Font = Enum.Font.SourceSans
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
 
-TitleXYZ.Name = "TitleXYZ"
-TitleXYZ.Parent = Main
-TitleXYZ.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TitleXYZ.BackgroundTransparency = 1.000
-TitleXYZ.Size = UDim2.new(0, 156, 0, 25)
-TitleXYZ.Font = Enum.Font.SourceSans
-TitleXYZ.Text = "XYZ  Hub Commands"
-TitleXYZ.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleXYZ.TextScaled = true
-TitleXYZ.TextSize = 14.000
-TitleXYZ.TextWrapped = true
+CmdHandler.Name = "CmdHandler"
+CmdHandler.Parent = Background
+CmdHandler.Active = true
+CmdHandler.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CmdHandler.BackgroundTransparency = 1.000
+CmdHandler.BorderSizePixel = 0
+CmdHandler.Position = UDim2.new(0.0591397844, 0, 0.184426233, 0)
+CmdHandler.Size = UDim2.new(0.876344085, 0, 0.774590135, 0)
+CmdHandler.CanvasSize = UDim2.new(0, 0, 18, 0)
+CmdHandler.ScrollBarThickness = 2
 
-DecorationLine_2.Name = "DecorationLine"
-DecorationLine_2.Parent = Main
-DecorationLine_2.BackgroundColor3 = Color3.fromRGB(255, 120, 57)
-DecorationLine_2.BorderSizePixel = 0
-DecorationLine_2.Position = UDim2.new(0.000102884951, 0, 0.0911245421, 0)
-DecorationLine_2.Size = UDim2.new(0, 672, 0, 1)
-
-HideGuiButton.Name = "HideGuiButton"
-HideGuiButton.Parent = Main
-HideGuiButton.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
-HideGuiButton.BorderSizePixel = 0
-HideGuiButton.Position = UDim2.new(0.943536401, 0, 0, 0)
-HideGuiButton.Size = UDim2.new(0, 38, 0, 27)
-HideGuiButton.Font = Enum.Font.SourceSans
-HideGuiButton.Text = "M"
-HideGuiButton.TextColor3 = Color3.fromRGB(170, 0, 0)
-HideGuiButton.TextScaled = true
-HideGuiButton.TextSize = 14.000
-HideGuiButton.TextWrapped = true
+UIListLayout.Parent = CmdHandler
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 Background3.Name = "Background3"
 Background3.Parent = CmdGui
 Background3.Active = true
 Background3.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Background3.BackgroundTransparency = 0.500
 Background3.BorderSizePixel = 0
-Background3.Position = UDim2.new(0, 420, 0, 454)
-Background3.Size = UDim2.new(0, 197, 0, 79)
+Background3.Position = UDim2.new(0, 633, 0, 674)
+Background3.Size = UDim2.new(0.119393937, 0, 0.0950661823, 0)
 Background3.Visible = false
 
 Topbar.Name = "Topbar"
 Topbar.Parent = Background3
-Topbar.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+Topbar.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Topbar.BackgroundTransparency = 0.500
 Topbar.BorderSizePixel = 0
-Topbar.Size = UDim2.new(0.99999994, 0, 0.2621122, 0)
-Topbar.Font = Enum.Font.GothamBlack
+Topbar.Size = UDim2.new(1, 0, 0.303797454, 0)
+Topbar.Font = Enum.Font.SourceSansBold
 Topbar.Text = "versions"
 Topbar.TextColor3 = Color3.fromRGB(255, 255, 255)
 Topbar.TextScaled = true
@@ -306,107 +361,66 @@ Topbar.TextWrapped = true
 
 CmdTitle.Name = "CmdTitle"
 CmdTitle.Parent = Background3
-CmdTitle.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+CmdTitle.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 CmdTitle.BackgroundTransparency = 1.000
 CmdTitle.BorderSizePixel = 0
-CmdTitle.Position = UDim2.new(0.0449999608, 0, 0.389999986, 0)
-CmdTitle.Size = UDim2.new(0.915597916, 0, 0.508134961, 0)
-CmdTitle.Font = Enum.Font.GothamBlack
+CmdTitle.Position = UDim2.new(0.0507614203, 0, 0.341772139, 0)
+CmdTitle.Size = UDim2.new(0.893401027, 0, 0.493670881, 0)
+CmdTitle.Font = Enum.Font.ArialBold
 CmdTitle.Text = "Script versions"
 CmdTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+CmdTitle.TextScaled = true
 CmdTitle.TextSize = 14.000
 CmdTitle.TextWrapped = true
 
 -- Scripts:
 
-local function ZSINV_fake_script() -- Main.Dragify 
-	local script = Instance.new('LocalScript', Main)
-
-	local UIS = game:GetService("UserInputService")
-	function dragify(Frame)
-	    dragToggle = nil
-	    local dragSpeed = 0
-	    dragInput = nil
-	    dragStart = nil
-	    local dragPos = nil
-	    function updateInput(input)
-	        local Delta = input.Position - dragStart
-	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-	    end
-	    Frame.InputBegan:Connect(function(input)
-	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-	            dragToggle = true
-	            dragStart = input.Position
-	            startPos = Frame.Position
-	            input.Changed:Connect(function()
-	                if input.UserInputState == Enum.UserInputState.End then
-	                    dragToggle = false
-	                end
-	            end)
-	        end
-	    end)
-	    Frame.InputChanged:Connect(function(input)
-	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-	            dragInput = input
-	        end
-	    end)
-	    game:GetService("UserInputService").InputChanged:Connect(function(input)
-	        if input == dragInput and dragToggle then
-	            updateInput(input)
-	        end
-	    end)
-	end
-	
-	dragify(script.Parent)
-end
-coroutine.wrap(ZSINV_fake_script)()
-local function LPISGS_fake_script() -- HideGuiButton.Hide 
-	local script = Instance.new('LocalScript', HideGuiButton)
+local function EFVEA_fake_script() -- Menu1.OpenClose 
+	local script = Instance.new('LocalScript', Menu1)
 
 	local button = script.Parent
-	local main = script.Parent.Parent.Parent.Main
-	local player = game.Players.LocalPlayer
+	local close = script.Parent.Parent.ExecutorFrame
 	
 	button.MouseButton1Click:Connect(function()
-		main.Visible = false
-		game:GetService("StarterGui"):SetCore("SendNotification", { 
-			Title = "Gui Hide";
-			Text = "To 0pen the GUI again, command: opengui";
-			Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-		Duration = 10;
-	end)
-	
-	player.Chatted:connect(function(cht)
-		if cht:match("opengui") then
-			main.Visible = true
-		elseif cht:match("open")then
-			main.Visible = true
-		end
-		
-		if cht:match("closegui") then
-			main.Visible = false
-			game:GetService("StarterGui"):SetCore("SendNotification", { 
-				Title = "Gui Hide";
-				Text = "To 0pen the GUI again, command: opengui";
-				Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-			Duration = 10;
-		elseif cht:match("close")then
-			main.Visible = false
-			game:GetService("StarterGui"):SetCore("SendNotification", { 
-				Title = "Gui Hide";
-				Text = "To 0pen the GUI again, command: opengui";
-				Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-			Duration = 10;
+		if close.Visible == true then
+			close.Visible = false
+		elseif close.Visible == false then
+			close.Visible = true
 		end
 	end)
-	
-	
-	
-	
-	
 end
-coroutine.wrap(LPISGS_fake_script)()
+coroutine.wrap(EFVEA_fake_script)()
+local function NUEMR_fake_script() -- Menu2.OpenClose 
+	local script = Instance.new('LocalScript', Menu2)
+
+	local button = script.Parent
+	local close = script.Parent.Parent.Background03
+	
+	button.MouseButton1Click:Connect(function()
+		if close.Visible == true then
+			close.Visible = false
+		elseif close.Visible == false then
+			close.Visible = true
+		end
+	end)
+end
+coroutine.wrap(NUEMR_fake_script)()
+local function HGSQTK_fake_script() -- Menu4.OpenClose 
+	local script = Instance.new('LocalScript', Menu4)
+
+	local button = script.Parent
+	local close = script.Parent.Parent.Background
+	
+	button.MouseButton1Click:Connect(function()
+		if close.Visible == true then
+			close.Visible = false
+		elseif close.Visible == false then
+			close.Visible = true
+		end
+	end)
+end
+coroutine.wrap(HGSQTK_fake_script)()
+
 
 --Final
 
