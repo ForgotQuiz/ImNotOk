@@ -86,7 +86,7 @@ while true do
 			--"If" Statements
 			--You can add as many of these as you wish, just change it to the player's name.
 			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
-				ownertext.Text = "JezkoDev [Admin]" --This is that the text will say.
+				ownertext.Text = "JezkoDev [Owner]" --This is that the text will say.
 				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) --This is what the color of the text will be.
 			end
 end
