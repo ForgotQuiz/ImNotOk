@@ -1833,6 +1833,14 @@ end
 	        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 	end
 	if Command("loadr") then
+	    local savedcf = GetPos()
+		local savedcamcf = GetCamPos()
+		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really black").Name)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+		workspace.CurrentCamera.CFrame = savedcamcf
+		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+    end
+	if Command("loadr") then
 	    --Auto
 	            States.Auto_Refresh = true
 		        Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
@@ -1840,15 +1848,6 @@ end
                 --AutoGuns
                 States.Auto_Guns = true
 	    	    Notify("Turn auto guns on", Color3.fromRGB(0, 255, 0), "Success")
-	    	    wait(1)
-		        --Black
-		        local savedcf = GetPos()
-		        local savedcamcf = GetCamPos()
-	    	    workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really black").Name)
-		        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-		        workspace.CurrentCamera.CFrame = savedcamcf
-		        Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
-		        wait(1)
 	end
 	if Command("clickarrest") or Command("carrest") then
 		Notify("Click Arrest Loaded", Color3.fromRGB(0, 255 ,0), "Success")
