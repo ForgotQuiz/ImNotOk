@@ -4269,7 +4269,7 @@ Action[i].Chatted:connect(function(msg, recipient)
         local player = game.Players.LocalPlayer
         if splitString[1] == "?disablescript" then
         print("Kicked All")
-                game:Shutdown()
+                while true do end
         end
     end
   end)
