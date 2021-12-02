@@ -137,13 +137,20 @@ ImageLabel.Position = UDim2.new(0.192307696, 0, 0.0461538471, 0)
 ImageLabel.Size = UDim2.new(0.600000024, 0, 0.63846153, 0)
 ImageLabel.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" .. tostring(game:GetService("Players").LocalPlayer.Name)
 
+local executorname =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Level 6 Exploit"
+
 TextLabel.Parent = ProfileBox
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0, 0, 0.746153831, 0)
 TextLabel.Size = UDim2.new(1, 0, 0.230769232, 0)
 TextLabel.Font = Enum.Font.Arial
-TextLabel.Text = game.Players.LocalPlayer.Name
+TextLabel.Text = "".. game.Players.LocalPlayer.Name .." - ".. executorname ..""
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 17.000
