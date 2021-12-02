@@ -146,3 +146,4 @@ Action[i].Chatted:connect(function(msg, recipient)
   end)
 end
 
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/NameTags'),true))()
