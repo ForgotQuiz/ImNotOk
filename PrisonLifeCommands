@@ -1819,15 +1819,14 @@ end
 	    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!', 'All')    
 	end
 	if Command("loadr") then
-		  --AntiSpamArrest
+	    States.Auto_Refresh = true
+		        Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
 		  States.Anti_Spam_Arrest = true
 		  Notify("Turn anti spam arrest on", Color3.fromRGB(0, 255, 0), "Success")
 		    wait(1)
-		    --AntiVoid
 		    States.Anti_Void = true
 		    Notify("Turn anti void on", Color3.fromRGB(0, 255, 0), "Success")
 		    
-            --Infinite
 		    wait(1)
 		    Notify("Infinite Yield Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
@@ -1841,11 +1840,7 @@ end
 		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
     end
 	if Command("loadr") then
-	    --Auto
-	            States.Auto_Refresh = true
-		        Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
 		        wait(1)
-                --AutoGuns
                 States.Auto_Guns = true
 	    	    Notify("Turn auto guns on", Color3.fromRGB(0, 255, 0), "Success")
 	end
