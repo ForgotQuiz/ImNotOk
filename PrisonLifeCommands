@@ -4843,38 +4843,4 @@ if cmduser.Name == "SalmonedaYT" then
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!','All')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
 end
 
-while true do
-	wait(2)
-			local script = Instance.new('Script', Tag)
-
-	--Variables
-	local rep = game.CoreGui.Tag --You can change this to ServerStorage for more security.
-	local nametag = rep.NameTag 
-	
-	--Functions
-        local player = game.Players.MRFRIENDFOVEVER
-        local char = player.Character
-        
-			--Varibles
-			local head = char.Head
-			local newtext = nametag:Clone() --Cloning the text.
-			local namtext = newtext.NameText
-			local ownertext = newtext.OwnerText
-			local humanoid = char.Humanoid
-			
-			humanoid.DisplayDistanceType = "None"
-			
-			--Main Text
-			newtext.Parent = head
-			newtext.Adornee = head
-			namtext.Text = player.Name --Changes the text to the player's name.
-			
-			--"If" Statements
-			--You can add as many of these as you wish, just change it to the player's name.
-			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
-				ownertext.Text = "JezkoDev [Admin]" --This is that the text will say.
-				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) --This is what the color of the text will be.
-			end
-end
-
 workspace.Remote.loadchar:InvokeServer()
