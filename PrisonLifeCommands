@@ -137,20 +137,13 @@ ImageLabel.Position = UDim2.new(0.192307696, 0, 0.0461538471, 0)
 ImageLabel.Size = UDim2.new(0.600000024, 0, 0.63846153, 0)
 ImageLabel.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" .. tostring(game:GetService("Players").LocalPlayer.Name)
 
-local executorname =
-   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-   secure_load and "Sentinel" or
-   KRNL_LOADED and "Krnl" or
-   SONA_LOADED and "Sona" or
-   "Level 6 Exploit"
-
 TextLabel.Parent = ProfileBox
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0, 0, 0.746153831, 0)
 TextLabel.Size = UDim2.new(1, 0, 0.230769232, 0)
 TextLabel.Font = Enum.Font.Arial
-TextLabel.Text = "".. game.Players.LocalPlayer.Name .." - ".. executorname ..""
+TextLabel.Text = game.Players.LocalPlayer.Name
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 17.000
@@ -4653,119 +4646,6 @@ Action[i].Chatted:connect(function(msg, recipient)
     end
   end)
 end
-
---fastcmd
-local cmduser = game.Players.LocalPlayer
---1cmd
-
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-     --checkchat
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!', 'All')
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    wait(2)
-     --auto
-    States.Auto_Refresh = true
-		Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    wait(2)
-     --autoguns
-	States.Auto_Guns = true
-		Notify("Turn auto guns on", Color3.fromRGB(0, 255, 0), "Success")
-		if BuyGamepass then
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-		else
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-		end
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    wait(2)
-     --black
-	local savedcf = GetPos()
-		local savedcamcf = GetCamPos()
-		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really black").Name)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    wait(3)
-     --fastpunch
-	States.Fast_Punch = true
-		Notify("Turn fast punch on", Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "MRFRIENDFOVEVER" then
-    wait(4)
-     --antivoid
-	States.Anti_Void = true
-		Notify("Turn anti void on", Color3.fromRGB(0, 255, 0), "Success")
-end
-
---2cmd
-
-if cmduser.Name == "SalmonedaYT" then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-end
-if cmduser.Name == "SalmonedaYT" then
-     --checkchat
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!', 'All')
-end
-if cmduser.Name == "SalmonedaYT" then
-    wait(2)
-     --auto
-    States.Auto_Refresh = true
-		Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "SalmonedaYT" then
-    wait(2)
-     --autoguns
-	States.Auto_Guns = true
-		Notify("Turn auto guns on", Color3.fromRGB(0, 255, 0), "Success")
-		if BuyGamepass then
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-		else
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-		end
-end
-if cmduser.Name == "SalmonedaYT" then
-    wait(2)
-     --black
-	local savedcf = GetPos()
-		local savedcamcf = GetCamPos()
-		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really black").Name)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "SalmonedaYT" then
-    wait(3)
-     --fastpunch
-	States.Fast_Punch = true
-		Notify("Turn fast punch on", Color3.fromRGB(0, 255, 0), "Success")
-end
-if cmduser.Name == "SalmonedaYT" then
-    wait(4)
-     --antivoid
-	States.Anti_Void = true
-		Notify("Turn anti void on", Color3.fromRGB(0, 255, 0), "Success")
-end
-
---endfastcmd
-
 
 game.Players.PlayerAdded:Connect(function()
 	for i,v in pairs(game.Players:GetPlayers()) do
