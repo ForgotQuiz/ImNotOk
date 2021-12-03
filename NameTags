@@ -118,5 +118,3 @@ while true do
 				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0)
 			end
 end
-
-wait (2)
