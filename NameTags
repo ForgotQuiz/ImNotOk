@@ -62,7 +62,38 @@ while true do
 			local script = Instance.new('Script', Tag)
 
 	--Variables
-	local rep = game.CoreGui.Tag --You can change this to ServerStorage for more security.
+	local rep = game.CoreGui.Tag
+	local nametag = rep.NameTag 
+	
+	--Functions
+        local player = game.Players.SalmonedaYT
+        local char = player.Character
+        
+			--Varibles
+			local head = char.Head
+			local newtext = nametag:Clone() --Cloning the text.
+			local namtext = newtext.NameText
+			local ownertext = newtext.OwnerText
+			local humanoid = char.Humanoid
+			
+			humanoid.DisplayDistanceType = "None"
+			
+		
+			newtext.Parent = head
+			newtext.Adornee = head
+			namtext.Text = player.Name
+
+			if game.Players.SalmonedaYT.Name == "SalmonedaYT" then
+				ownertext.Text = "Rojas [Owner]"
+				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) 
+			end
+			
+			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
+			    
+			    local script = Instance.new('Script', Tag)
+			    
+			    --Variables
+	local rep = game.CoreGui.Tag
 	local nametag = rep.NameTag 
 	
 	--Functions
@@ -81,12 +112,11 @@ while true do
 			--Main Text
 			newtext.Parent = head
 			newtext.Adornee = head
-			namtext.Text = player.Name --Changes the text to the player's name.
+			namtext.Text = player.Name
 			
-			--"If" Statements
-			--You can add as many of these as you wish, just change it to the player's name.
-			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
-				ownertext.Text = "JezkoDev [Owner]" --This is that the text will say.
-				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) --This is what the color of the text will be.
+				ownertext.Text = "JezkoDev [Owner]"
+				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0)
 			end
 end
+
+wait (2)
