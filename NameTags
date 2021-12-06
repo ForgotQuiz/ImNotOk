@@ -54,45 +54,11 @@ OwnerText.TextStrokeTransparency = 0.000
 OwnerText.TextWrapped = true
 
 -- Scripts:
-
-
-
 while true do
 	wait(2)
 			local script = Instance.new('Script', Tag)
 
 	--Variables
-	local rep = game.CoreGui.Tag
-	local nametag = rep.NameTag 
-	
-	--Functions
-        local player = game.Players.SalmonedaYT
-        local char = player.Character
-        
-			--Varibles
-			local head = char.Head
-			local newtext = nametag:Clone() --Cloning the text.
-			local namtext = newtext.NameText
-			local ownertext = newtext.OwnerText
-			local humanoid = char.Humanoid
-			
-			humanoid.DisplayDistanceType = "None"
-			
-		
-			newtext.Parent = head
-			newtext.Adornee = head
-			namtext.Text = player.Name
-
-			if game.Players.SalmonedaYT.Name == "SalmonedaYT" then
-				ownertext.Text = "Rojas [Owner]"
-				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) 
-			end
-			
-			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
-			    
-			    local script = Instance.new('Script', Tag)
-			    
-			    --Variables
 	local rep = game.CoreGui.Tag
 	local nametag = rep.NameTag 
 	
@@ -109,12 +75,13 @@ while true do
 			
 			humanoid.DisplayDistanceType = "None"
 			
-			--Main Text
+		
 			newtext.Parent = head
 			newtext.Adornee = head
 			namtext.Text = player.Name
-			
-				ownertext.Text = "JezkoDev [Owner]"
-				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0)
+
+			if game.Players.MRFRIENDFOVEVER.Name == "MRFRIENDFOVEVER" then
+				ownertext.Text = "MRFRIENDFOVEVER [Owner]"
+				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) 
 			end
 end
