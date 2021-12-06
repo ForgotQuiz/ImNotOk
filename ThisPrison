@@ -4,7 +4,7 @@ local player = game.Players.LocalPlayer
 local yes = "NotWhitelisted"
 
 rconsolename('XYZ.Hub')
-rconsoleprint("\nXYZ.Hub Loaded!")
+rconsoleprint("XYZ.Hub Loaded!")
 rconsoleprint("\nType in the chat ?load xyz.lua")
 rconsoleprint("\n--------------------------------")
 
