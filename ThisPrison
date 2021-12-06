@@ -9,16 +9,16 @@ rconsoleprint("Checking Whitelist...")
 print(yes)
 
 if yes == "NotWhitelisted" then
-	rconsoleprint("Not Whitelisted!")
+	rconsoleprint("n\Not Whitelisted!")
        print"WaitingForTheKey"
-       rconsoleprint("Waiting ForThe Key")
+       rconsoleprint("n\Waiting ForThe Key")
        
        --Chat Doesnt Match
        player.Chatted:Connect(function(cht)
          if cht.message ~= "?load xyz.lua" then
              if yes == "NotWhitelisted" then
                  print"Not Whitelisted"
-		 rconsoleprint("Wrong Key!")
+		 rconsoleprint("n\Wrong Key!")
                  player:Kick('Wrong key 🤡🤡')
             end
          end
@@ -28,8 +28,8 @@ if yes == "NotWhitelisted" then
       player.Chatted:Connect(function(cht)
          if cht:match("?load xyz.lua") then
            yes = "Whitelisted"
-	   rconsoleprint("Whitelisted!")
-	   rconsoleprint("Loading Script...")
+	   rconsoleprint("n\Whitelisted!")
+	   rconsoleprint("n\Loading Script...")
           print(yes)
           loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/PrisonLifeCommands'),true))()
           local executor =
@@ -40,7 +40,7 @@ if yes == "NotWhitelisted" then
                 "Lvl 6 Exploit"
                 
                 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Commands Loaded (6.8) * Using '.. executor .. ' *', 'All')
-		rconsoleprint("Loaded!")
+		rconsoleprint("n\Loaded!")
         end
     end)
 end
