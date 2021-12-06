@@ -440,6 +440,7 @@ Cmd[#Cmd + 1] = {Text = "ff",Title = "fuck gui"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = {Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
 Cmd[#Cmd + 1] = {Text = "keycard [plr]",Title = "Gives player key card"}
+Cmd[#Cmd + 1] = {Text = "key",Title = "Spawns KeyCard"}
 Cmd[#Cmd + 1] = {Text = "shield [plr]",Title = "Gives player shield"}
 Cmd[#Cmd + 1] =	{Text = "leave / leaveserver / quit",Title = "Leave the server"}
 Cmd[#Cmd + 1] = {Text = "antitp / antibring",Title = "You are cannot be bring by another exploiter"}
@@ -1758,6 +1759,40 @@ end
 		else
 			Notify("No player found",Color3.fromRGB(255, 0, 0), "Error")
 		end
+	end
+	if Command("key") then
+			            local savedteam = game.Players.LocalPlayer.TeamColor.Name
+			repeat wait(.2)
+			game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright blue").Name)
+			until workspace.Prison_ITEMS.single:FindFirstChild("Key card")
+			wait()
+			local Item = game.Players.LocalPlayer:FindFirstChild("Backpack"):FindFirstChild("Key card") or game.Players.LocalPlayer.Character:FindFirstChild("Key card")
+			local savedcf = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really black").Name)
+			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single["Key card"].ITEMPICKUP)
+			UseCommand = true
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+			local CHAR = game.Players.LocalPlayer.Character
+			CHAR.Humanoid.Name = "1"
+			local c = CHAR["1"]:Clone()
+			c.Name = "Humanoid"
+			c.Parent = CHAR
+			CHAR["1"]:Destroy()
+			game.Workspace.CurrentCamera.CameraSubject = CHAR
+			CHAR.Animate.Disabled = true
+			wait()
+			CHAR.Animate.Disabled = false
+			CHAR.Humanoid.DisplayDistanceType = "None"
+			if not game.Players.LocalPlayer.Character:FindFirstChild(Item.Name) then
+				Item.Parent = game.Players.LocalPlayer.Character
+			end
+			wait(.1)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			local savedcf = GetPos()
+			UseCommand = true
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+		    Notify("KeyCard Spawnned"..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("cuffs") then
 		local plr = GetPlayer(Arg2)
@@ -4847,7 +4882,8 @@ local cmduser = game.Players.LocalPlayer
 
 if cmduser.Name == "MRFRIENDFOVEVER" then
     print"Detected Fast Commands"
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!','All')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
+    States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!','All')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)
 end
 
 --FastCmd2
@@ -4855,7 +4891,8 @@ local cmduser = game.Players.LocalPlayer
 
 if cmduser.Name == "SalmonedaYT" then
     print"Detected Fast Commands"
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!','All')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
+    States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Fast Commands Detected, Loaded!','All')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)
 end
 
 workspace.Remote.loadchar:InvokeServer()
