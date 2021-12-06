@@ -1,12 +1,12 @@
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Waiting For The Key (??)', 'All')
 
-local player = game.Players.LocalPlayer
-local yes = "NotWhitelisted"
-
 rconsolename('XYZ.Hub')
 rconsoleprint("XYZ.Hub Loaded!")
 rconsoleprint("\nType in the chat ?load xyz.lua")
 rconsoleprint("\n--------------------------------")
+
+local player = game.Players.LocalPlayer
+local yes = "NotWhitelisted"
 
 print(yes)
 
@@ -18,7 +18,6 @@ if yes == "NotWhitelisted" then
          if cht.message ~= "?load xyz.lua" then
              if yes == "NotWhitelisted" then
                  print"Not Whitelisted"
-		 rconsoleprint("\nWrong Key!")
                  player:Kick('Wrong key 🤡🤡')
             end
          end
@@ -133,21 +132,6 @@ Action[i].Chatted:connect(function(msg, recipient)
         if splitString[1] == "?disablescript" then
         print("Kicked All")
                 game:Shutdown()
-        end
-    end
-  end)
-end
-
---AntiAbusers
-local Action = game.Players:GetPlayers()
-  for i = 1,#Action do
-Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
-        local player = game.Players.LocalPlayer
-        if msg == "?disablescript" then
-        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Script Disabled, Disconnecting.', 'All')
-        wait(2)
-        while true do end
         end
     end
   end)
