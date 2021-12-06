@@ -1,0 +1,87 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Tag = Instance.new("ScreenGui")
+local NameTag = Instance.new("BillboardGui")
+local NameText = Instance.new("TextLabel")
+local OwnerText = Instance.new("TextLabel")
+
+--Properties:
+
+Tag.Name = "Tag"
+Tag.Parent = game.CoreGui
+Tag.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+NameTag.Name = "NameTag"
+NameTag.Parent = Tag
+NameTag.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+NameTag.Active = true
+NameTag.LightInfluence = 1.000
+NameTag.MaxDistance = 100.000
+NameTag.Size = UDim2.new(4, 0, 1, 0)
+NameTag.StudsOffset = Vector3.new(0, 2, 0)
+
+NameText.Name = "NameText"
+NameText.Parent = NameTag
+NameText.AnchorPoint = Vector2.new(0.5, 0.5)
+NameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameText.BackgroundTransparency = 1.000
+NameText.Position = UDim2.new(0.5, 0, 0.5, 0)
+NameText.Size = UDim2.new(1, 0, 1, 0)
+NameText.Font = Enum.Font.SourceSansBold
+NameText.Text = "Dummy"
+NameText.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameText.TextScaled = true
+NameText.TextSize = 14.000
+NameText.TextStrokeTransparency = 0.000
+NameText.TextWrapped = true
+
+OwnerText.Name = "OwnerText"
+OwnerText.Parent = NameTag
+OwnerText.AnchorPoint = Vector2.new(0.5, 0.5)
+OwnerText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OwnerText.BackgroundTransparency = 1.000
+OwnerText.Position = UDim2.new(0.5, 0, 0, 0)
+OwnerText.Size = UDim2.new(1, 0, 0.699999988, 0)
+OwnerText.Font = Enum.Font.SourceSansBold
+OwnerText.Text = "JezkoDev [Admin]"
+OwnerText.TextColor3 = Color3.fromRGB(255, 128, 0)
+OwnerText.TextScaled = true
+OwnerText.TextSize = 14.000
+OwnerText.TextStrokeTransparency = 0.000
+OwnerText.TextWrapped = true
+
+-- Scripts:
+while true do
+	wait(2)
+			local script = Instance.new('Script', Tag)
+
+	--Variables
+	local rep = game.CoreGui.Tag
+	local nametag = rep.NameTag 
+	
+	--Functions
+        local player = game.Players.asosretroll123456789
+        local char = player.Character
+        
+			--Varibles
+			local head = char.Head
+			local newtext = nametag:Clone() --Cloning the text.
+			local namtext = newtext.NameText
+			local ownertext = newtext.OwnerText
+			local humanoid = char.Humanoid
+			
+			humanoid.DisplayDistanceType = "None"
+			
+		
+			newtext.Parent = head
+			newtext.Adornee = head
+			namtext.Text = player.Name
+
+			if game.Players.asosretroll123456789.Name == "asosretroll123456789" then
+				ownertext.Text = "asosretroll123456789 [Owner]"
+				ownertext.TextColor3 = Color3.fromRGB(255, 128, 0) 
+			end
+end
