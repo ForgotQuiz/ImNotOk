@@ -357,11 +357,7 @@ local function TADFIR_fake_script() -- HideGUI.LocalScript
 	local button = script.Parent
 	
 	button.MouseButton1Click:Connect(function()
-		if frame.Visible == true then
-			frame.Visible = false
-		else
-			frame.Visible = true
-		end
+		print"Command $v"
 	end)
 end
 coroutine.wrap(TADFIR_fake_script)()
