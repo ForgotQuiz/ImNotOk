@@ -2,7 +2,7 @@
 Actualizado
 ]]
 local CmdText = Instance.new("TextButton")
-local Prefix = "?"
+local Prefix = "$"
 --No tocar
 CmdText.Name = "CmdText"
 CmdText.Parent = nil
@@ -116,7 +116,7 @@ Execute.BorderSizePixel = 0
 Execute.Size = UDim2.new(0, 459, 0, 35)
 Execute.Font = Enum.Font.SourceSans
 Execute.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-Execute.PlaceholderText = "Command Line {Prefix}: ?"
+Execute.PlaceholderText = "Command Line {Prefix}: $"
 Execute.Text = ""
 Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextSize = 30.000
