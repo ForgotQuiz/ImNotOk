@@ -419,25 +419,6 @@ local function BTMRL_fake_script() -- A1Main.Smooth GUI Dragging
 	runService.Heartbeat:Connect(Update)
 end
 coroutine.wrap(BTMRL_fake_script)()
-local function GPSIDXU_fake_script() -- CmdGui.LocalScript 
-	local script = Instance.new('LocalScript', CmdGui)
-
-	local gui = script.Parent
-	local message = "$v"
-	local player = game.Players.LocalPlayer
-	
-	player.Chatted:Connect(function()
-		if message == message then
-			if gui.Enabled == true then
-				gui.Enabled = false
-			else
-				gui.Enabled = true
-			end
-		end
-	end)
-end
-coroutine.wrap(GPSIDXU_fake_script)()
-
 
 --Final
 
