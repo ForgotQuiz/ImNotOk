@@ -480,6 +480,7 @@ Cmd[#Cmd + 1] =	{Text = "prefix / newprefix / changeprefix [prefix text]",Title 
 Cmd[#Cmd + 1] =	{Text = "red",Title = "Changes name tag color to red color"}
 Cmd[#Cmd + 1] = {Text = "antilag / boostfps",Title = "Boost a little fps"}
 Cmd[#Cmd + 1] = {Text = "unantilag",Title = "Stop boost the fps"}
+Cmd[#Cmd + 1] = {Text = "neptune",Title = "Neptunian V Switcher"}
 Cmd[#Cmd + 1] = {Text = "noclip / noclips",Title = "Activate no clips"}
 Cmd[#Cmd + 1] = {Text = "clip / clips",Title = "Unactivate no clips"}
 Cmd[#Cmd + 1] =	{Text = "orange",Title = "Changes name tag color to orange color"}
@@ -1878,6 +1879,10 @@ end
 	if Command("chatbypasser") or Command("chatb") then
 		Notify("Chat Bypasser Loaded", Color3.fromRGB(0, 255 ,0), "Success")
 	    loadstring(game:HttpGet(('https://the-shed.xyz/roblox/scripts/ChatBypass'),true))()
+	end
+	if Command("neptune") or Command("destroyer") then
+		Notify("Neptunian V Switcher Loaded", Color3.fromRGB(0, 255 ,0), "Success")
+	    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/Neptune'),true))()
 	end
 	if Command("re2") or Command("unreanim") then
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
