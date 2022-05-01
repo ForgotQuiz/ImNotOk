@@ -350,7 +350,7 @@ CmdTitle.TextWrapped = true
 
 -- Scripts:
 
-local function QKXOPV_fake_script() -- HideGUI.LocalScript 
+local function TADFIR_fake_script() -- HideGUI.LocalScript 
 	local script = Instance.new('LocalScript', HideGUI)
 
 	local frame = script.Parent.Parent.Parent.A1Main
@@ -364,8 +364,66 @@ local function QKXOPV_fake_script() -- HideGUI.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QKXOPV_fake_script)()
-local function AYQUE_fake_script() -- CmdGui.LocalScript 
+coroutine.wrap(TADFIR_fake_script)()
+local function BTMRL_fake_script() -- A1Main.Smooth GUI Dragging 
+	local script = Instance.new('LocalScript', A1Main)
+
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end
+coroutine.wrap(BTMRL_fake_script)()
+local function GPSIDXU_fake_script() -- CmdGui.LocalScript 
 	local script = Instance.new('LocalScript', CmdGui)
 
 	local gui = script.Parent
@@ -382,7 +440,7 @@ local function AYQUE_fake_script() -- CmdGui.LocalScript
 		end
 	end)
 end
-coroutine.wrap(AYQUE_fake_script)()
+coroutine.wrap(GPSIDXU_fake_script)()
 
 
 --Final
