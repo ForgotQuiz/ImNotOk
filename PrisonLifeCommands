@@ -1702,20 +1702,6 @@ function PlayerChatted(Message)
 			Notify("You don't have gamepass for swat", Color3.fromRGB(255, 255, 0), "Warn")
 		end
 	end
-	if Command("god") then
-		getgenv().Nullware_ReanimateConfiguration = {
-	["Netless"] = true, --Toggles Netless.
-	["Anti-Fling"] = false, --Toggles Anti-Fling.
-	["Hats To Align"] = {}, --List of hats that you want to align. (e.g. {"Hat1", "Hat2"} or {"All"})
-	["Head Movement Without Godmode"] = false, --Toggles Head Movement Without Godmode.
-	["Enable Limb Collisions"] = false, --Enables your limb's collisions. (Overrides "Disable Torso Collisions" if enabled, also doesn't require godmode)
-	["Disable Torso Collisions"] = false, --Disables your torso's collisions. (Doesn't work with godmode)
-	["R15 To R6"] = false, --Toggles R15 To R6.
-	["Godmode"] = false --Toggles Godmode.
-}
-loadstring(game:HttpGetAsync("https://gist.githubusercontent.com/M6HqVBcddw2qaN4s/8cd532018277ee9982433eea25a6c14f/raw/sewMjTpJvVBLR96L"))()
-Notify("Turn god mode on", Color3.fromRGB(0, 255, 0), "Success")
-end
 
 	if Command("keycard") then
 		local plr = GetPlayer(Arg2)
@@ -2035,6 +2021,20 @@ end
 		StringsLowerMessage = false
 		Notify("Turn String lower message to false", Color3.fromRGB(0, 255, 0), "Success")
 	end
+    if Command("god") then
+		getgenv().Nullware_ReanimateConfiguration = {
+	    ["Netless"] = true, --Toggles Netless.
+	    ["Anti-Fling"] = false, --Toggles Anti-Fling.
+	    ["Hats To Align"] = {}, --List of hats that you want to align. (e.g. {"Hat1", "Hat2"} or {"All"})
+	    ["Head Movement Without Godmode"] = false, --Toggles Head Movement Without Godmode.
+	    ["Enable Limb Collisions"] = false, --Enables your limb's collisions. (Overrides "Disable Torso Collisions" if enabled, also doesn't require godmode)
+	    ["Disable Torso Collisions"] = false, --Disables your torso's collisions. (Doesn't work with godmode)
+	    ["R15 To R6"] = false, --Toggles R15 To R6.
+	    ["Godmode"] = false --Toggles Godmode.
+    }
+    loadstring(game:HttpGetAsync("https://gist.githubusercontent.com/M6HqVBcddw2qaN4s/8cd532018277ee9982433eea25a6c14f/raw/sewMjTpJvVBLR96L"))()
+    Notify("Turn god mode on", Color3.fromRGB(0, 255, 0), "Success")
+    end
 	if Command("slm") then
 		StringsLowerMessage = true
 		Notify("Turn String lower message to true", Color3.fromRGB(0, 255, 0), "Success")
