@@ -428,7 +428,7 @@ local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
 Cmd[#Cmd + 1] = {Text = "script by Jezko",Title = "Remaked Updated"}
-Cmd[#Cmd + 1] = {Text = "script mejorado por hell#3224",Title = "My Discord"}
+Cmd[#Cmd + 1] = {Text = "script mejorado por iJezko25#6666",Title = "My Discord"}
 Cmd[#Cmd + 1] = {Text = "Jezko",Title = "Owner 🤣"}
 Cmd[#Cmd + 1] = {Text = "Click?",Title = "Click on cmd to use quick cmd"}
 Cmd[#Cmd + 1] = {Text = "*Note*",Title = "New updates: Reduce lag & faster bring and more commands"}
