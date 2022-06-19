@@ -602,6 +602,7 @@ Cmd[#Cmd + 1] =	{Text = "uncopychat",Title = "uncopies all players chats"}
 Cmd[#Cmd + 1] =	{Text = "chatnotify",Title = "Chats when player leave / join"}
 Cmd[#Cmd + 1] =	{Text = "opengate",Title = "Open the gate"}
 Cmd[#Cmd + 1] =	{Text = "hathub / hh",Title = "Loads HatHub (remake)"}
+Cmd[#Cmd + 1] =	{Text = "owlhub / silentaim",Title = "Loads OwlHub (script)"}
 Cmd[#Cmd + 1] =	{Text = "antifell / antivoid",Title = "Activate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =	{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =	{Text = "beam [plr]",Title = "Shoot a beam to player"}
@@ -2095,6 +2096,9 @@ function PlayerChatted(Message)
 				Unesp(v)
 			end
 		end
+	end
+	if Command("owlhub") or Command("silentaim") then
+		loadstring(game:HttpGet("https://github.com/ForgotQuiz/ImNotOk/blob/main/owlHub"))() 
 	end
 	if Command("espcrim") or Command("espcriminal") or Command("espcriminals") then
 		States.Esp_Criminals = true
