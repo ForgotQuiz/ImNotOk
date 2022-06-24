@@ -110,7 +110,7 @@ wait(.5)
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 wait(.5)
 queueteleport("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/DHM'))()")
-
+wait(.5)
 --Kick
 local Action = game.Players:GetPlayers()
   for i = 1,#Action do
