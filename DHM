@@ -1,5 +1,3 @@
-queueteleport("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/DHM'))()")
-
 local player = game.Players.LocalPlayer
            local spacedown = false
            staminup = true
