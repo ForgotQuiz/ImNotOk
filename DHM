@@ -91,6 +91,14 @@ local function onChatted(p,msg)
 	end
 end
 
+local RunService = game:GetService("RunService")
+function antiSit()
+if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Seated then 
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end
+end
+RunService:BindToRenderStep("tempBinding", 1000, antiSit)
+
 for _,p in ipairs(Players:GetPlayers()) do
 	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
 end
