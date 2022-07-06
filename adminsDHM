@@ -95,4 +95,4 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/m
 
 wait(.5)
 
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed"))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
