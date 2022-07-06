@@ -89,6 +89,10 @@ local admins = {
 	end)
 end)
 
-wait(2)
+wait(1)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ownerDHM'),true))()
+
+wait(.5)
+
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/adminsDHM"))()
