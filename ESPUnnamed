@@ -387,7 +387,7 @@ Visible = true;
 Menu:AddMenuInstace('TopBarTextBR', NewDrawing'Text'{
 Size = 15;
 Position = shared.MenuDrawingData.Instances.TopBarTwo.Position + Vector2.new(BaseSize.X - 65, 40);
-Text = 'by ic3w0lf';
+Text = 'by iJezko25';
 Color = Colors.Secondary.Dark;
 Visible = true;
 });
