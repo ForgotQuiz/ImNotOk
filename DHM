@@ -115,6 +115,15 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 --loadstring(game:HttpGet('https://pastebin.com/raw/XkcN6cYQ'))()
 
 wait(.5)
+
+while true do
+wait(2)
+local ohString1 = "Skin"
+        local ohString2 = "9493408206"
+
+        game:GetService("ReplicatedStorage").MainRemote:FireServer(ohString1, ohString2)
+end
+
 local amount = 90
 
 game:GetService'Workspace'.Camera.FieldOfView = amount
