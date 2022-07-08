@@ -141,11 +141,3 @@ wait(12)
 local info = game:GetService("CoreGui").TargetInfo.MainFrame
 info.AnchorPoint = Vector2.new(0, 0)
 info.Position = UDim2.new(0, 260, 0, 800)
-
-while true do
-wait(2)
-local ohString1 = "Skin"
-        local ohString2 = "9493408206"
-
-        game:GetService("ReplicatedStorage").MainRemote:FireServer(ohString1, ohString2)
-end
