@@ -136,7 +136,11 @@ end)
 wait(.5)
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 
-wait(14)
+wait(1)
+
+while true do
+wait(5)
 local info = game:GetService("CoreGui").TargetInfo.MainFrame
 info.AnchorPoint = Vector2.new(0, 0)
 info.Position = UDim2.new(0, 260, 0, 800)
+end
