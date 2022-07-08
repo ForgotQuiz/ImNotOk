@@ -21,10 +21,16 @@ local admins = {
              
                 if admin == true then
                     print('OWNER')
-		    
-		    wait(1)
-		    
-		    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/golden'),true))()
+                    --Golden
+		            if args[1] == "gold" then
+                        while true do
+			                wait(2)
+			                local ohString1 = "Skin"
+        		            local ohString2 = "9493408206"
+
+        		            game:GetService("ReplicatedStorage").MainRemote:FireServer(ohString1, ohString2)
+		                end
+                    end
                 end
                 
                 if admin == false then
