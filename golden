@@ -1,0 +1,7 @@
+while true do
+			wait(2)
+			local ohString1 = "Skin"
+        		local ohString2 = "9493408206"
+
+        		game:GetService("ReplicatedStorage").MainRemote:FireServer(ohString1, ohString2)
+		    end
