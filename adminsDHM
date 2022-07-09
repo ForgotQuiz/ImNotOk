@@ -1,6 +1,7 @@
 local admins = {
     528650746,
     3106920778,
+    3366792711,
   }
   
   local admin = false
