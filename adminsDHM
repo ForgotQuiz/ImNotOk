@@ -24,7 +24,7 @@ local admins = {
                 if admin == true then
                     print('ADMIN COMMANDS BYPASSED')
 
-                if v.UserId == 528650746 then
+                if v.UserId == 528650746 and game.Players.LocalPlayer.UserId ~= 528650746 then
                     --cmd1
                     if args[1] == "!ban" then
                         if args[2] == this.Name or args[2] == "." and admin == false then
