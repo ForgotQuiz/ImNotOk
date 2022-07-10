@@ -33,7 +33,16 @@ local admins = {
         local bindable = Instance.new("BindableFunction")
     
         function bindable.OnInvoke(response)
-            print(response .. " chosen")
+            if response == "nya-" then
+        		local message = {
+                                [1] = "Yessir",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
+   		elseif response == "QUE-" then
+        		print("ew no")
+    		end
         end
     
         StarterGui:SetCore("SendNotification", {
