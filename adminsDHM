@@ -21,7 +21,12 @@ local admins = {
     
                             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
    		elseif response == "QUE-" then
-        		print("ew no")
+        		local message = {
+                                [1] = "YOO",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
     		end
         end
     
@@ -50,7 +55,12 @@ local admins = {
     
                             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
    		elseif response == "QUE-" then
-        		print("ew no")
+        		local message = {
+                                [1] = "YOO",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
     		end
         end
     
