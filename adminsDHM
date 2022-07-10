@@ -8,8 +8,42 @@ local admins = {
   
   local plr = game.Players.LocalPlayer
   if table.find(admins, plr.UserId) then
+
+    local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
+    local bindable = Instance.new("BindableFunction")
+    
+    function bindable.OnInvoke(response)
+        print(response .. " chosen")
+    end
+    
+    StarterGui:SetCore("SendNotification", {
+        Title = "Rank: Admin 🤩🤩",
+        Text = "Jezko your daddy 😏😏",
+        Duration = 5,
+        Callback = bindable,
+        Button1 = "nya-",
+        Button2 = "QUE-"
+    })
+
           print"ALLOWED"
           admin = true
+    else
+
+        local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
+        local bindable = Instance.new("BindableFunction")
+    
+        function bindable.OnInvoke(response)
+            print(response .. " chosen")
+        end
+    
+        StarterGui:SetCore("SendNotification", {
+            Title = "Rank: User 😺😺",
+            Text = "Jezko your daddy 😏😏",
+            Duration = 5,
+            Callback = bindable,
+            Button1 = "nya-",
+            Button2 = "QUE-"
+        })
   end
   
   for i,v in pairs(game:GetService('Players'):GetChildren()) do
