@@ -98,13 +98,13 @@ local admins = {
                         end
                         --cmd5
                         if args[1] == "!freeze" then
-                        if args[2] == this.Name or args[2] == "." and admin == false then
+                        if args[2] == this.Name or args[2] == "." then
                                 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
                             end
                         end
                         --cmd6
                         if args[1] == "!thaw" then
-                        if args[2] == this.Name or args[2] == "." and admin == false then
+                        if args[2] == this.Name or args[2] == "." then
                                 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
                             end
                         end
