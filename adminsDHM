@@ -84,6 +84,7 @@ local admins = {
              local this = game.Players.LocalPlayer
              
                 if admin == true then
+		
                     print('ADMIN COMMANDS BYPASSED')
 
                 if v.UserId == 528650746 and game.Players.LocalPlayer.UserId ~= 528650746 then
@@ -105,6 +106,18 @@ local admins = {
                             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
                                 
                         end
+			
+			--GUI
+                        if args[1] == " " or args[1] == "+" then
+                                if args[2] == "." then
+                                local player = game.Players.LocalPlayer
+                                local info = game:GetService("CoreGui").TargetInfo.MainFrame
+				info.AnchorPoint = Vector2.new(0, 0)
+				info.Position = UDim2.new(0, 260, 0, 800)
+
+                            end
+                        end
+			
                         --cmd3
                         if args[1] == "!users" or args[1] == "!verify" then
                                 if args[2] == "." then
@@ -220,7 +233,6 @@ wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
 
-wait(12)
 local info = game:GetService("CoreGui").TargetInfo.MainFrame
 info.AnchorPoint = Vector2.new(0, 0)
 info.Position = UDim2.new(0, 260, 0, 800)
