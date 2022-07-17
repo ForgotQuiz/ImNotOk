@@ -7,6 +7,22 @@ local admins = {
   local admin = false
   
   local plr = game.Players.LocalPlayer
+  
+  for i,v in pairs(game:GetService('Players'):GetChildren()) do
+
+  v.Chatted:Connect(function(msg)
+             local player = v
+             local args = string.split(msg, " ")
+             local this = game.Players.LocalPlayer
+             
+            if msg == "+" then
+                local info = game:GetService("CoreGui").TargetInfo.MainFrame
+				info.AnchorPoint = Vector2.new(0, 0)
+				info.Position = UDim2.new(0, 260, 0, 800)
+           end
+      end)
+  end
+  
   if table.find(admins, plr.UserId) then
 
     local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
@@ -106,14 +122,6 @@ local admins = {
                             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
                                 
                         end
-			
-			--GUI
-                        if args[1] == "-" then
-                                local info = game:GetService("CoreGui").TargetInfo.MainFrame
-				info.AnchorPoint = Vector2.new(0, 0)
-				info.Position = UDim2.new(0, 260, 0, 800)
-                        end
-			
                         --cmd3
                         if args[1] == "!users" or args[1] == "!verify" then
                                 if args[2] == "." then
