@@ -1,3 +1,7 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+
+wait(1)
+
 local player = game.Players.LocalPlayer
            local spacedown = false
            staminup = true
@@ -126,7 +130,3 @@ game.Players.PlayerAdded:Connect(function(plr)
         end
 	end)
 end)
-
-wait(1.5)
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
