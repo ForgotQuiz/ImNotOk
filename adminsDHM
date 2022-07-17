@@ -232,7 +232,3 @@ end)
 wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
-
-local info = game:GetService("CoreGui").TargetInfo.MainFrame
-info.AnchorPoint = Vector2.new(0, 0)
-info.Position = UDim2.new(0, 260, 0, 800)
