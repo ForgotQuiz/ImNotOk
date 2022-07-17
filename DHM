@@ -126,5 +126,7 @@ game.Players.PlayerAdded:Connect(function(plr)
         end
 	end)
 end)
-wait(.5)
+
+wait(1.5)
+
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
