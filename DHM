@@ -2,10 +2,6 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield
 
 wait(1)
 
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm"))()
-
-wait(1)
-
 local player = game.Players.LocalPlayer
            local spacedown = false
            staminup = true
@@ -119,6 +115,12 @@ wait(.5)
 local amount = 90
 
 game:GetService'Workspace'.Camera.FieldOfView = amount
+
+wait(1)
+
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm"))()
+
+wait(1)
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/adminsDHM"))()
 
