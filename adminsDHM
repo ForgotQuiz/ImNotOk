@@ -108,8 +108,7 @@ local admins = {
                         end
 			
 			--GUI
-                        if args[1] == " " or args[1] == "+" then
-                                local player = game.Players.LocalPlayer
+                        if args[1] == "-" then
                                 local info = game:GetService("CoreGui").TargetInfo.MainFrame
 				info.AnchorPoint = Vector2.new(0, 0)
 				info.Position = UDim2.new(0, 260, 0, 800)
