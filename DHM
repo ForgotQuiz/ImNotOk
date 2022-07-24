@@ -1,13 +1,6 @@
-if syn then request = syn.request end
-local req = request({
-    Url = 'https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm'
-})
-loadstring(req.Body)()
+local Thread1 = coroutine.create(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm', true))()
+end)
+coroutine.resume(Thread1)
 
-wait(.5)
-
-if syn then request = syn.request end
-local req2 = request({
-    Url = 'https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader'
-})
-loadstring(req2.Body)()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader', true))()
