@@ -8,6 +8,11 @@ local admins = {
   
   local plr = game.Players.LocalPlayer
   
+  if table.find(admins, plr.UserId) then
+  	print"ALLOWED"
+          admin = true
+  end
+  
   for i,v in pairs(game:GetService('Players'):GetChildren()) do
 
   v.Chatted:Connect(function(msg)
