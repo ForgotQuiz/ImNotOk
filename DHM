@@ -1,7 +1,13 @@
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/adminsDHM"))()
+if syn then request = syn.request end
+local req = request({
+    Url = 'https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm'
+})
+loadstring(req.Body)()
 
 wait(.5)
 
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader"))()
-
---load
+if syn then request = syn.request end
+local req = request({
+    Url = 'https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader'
+})
+loadstring(req.Body)()
