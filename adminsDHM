@@ -22,74 +22,7 @@ local admins = {
            end
       end)
   end
-  
-  if table.find(admins, plr.UserId) then
-
-    local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
-    local bindable = Instance.new("BindableFunction")
     
-    function bindable.OnInvoke(response)
-            if response == "nya-" then
-                local message = {
-                                [1] = "Yessir",
-                                [2] = "All"
-                            }
-    
-                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
-   		elseif response == "QUE-" then
-        		local message = {
-                                [1] = "YOO",
-                                [2] = "All"
-                            }
-    
-                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
-    		end
-        end
-    
-    StarterGui:SetCore("SendNotification", {
-        Title = "Rank: Admin 🤩🤩",
-        Text = "Jezko your daddy 😏😏",
-        Duration = 5,
-        Callback = bindable,
-        Button1 = "nya-",
-        Button2 = "QUE-"
-    })
-
-          print"ALLOWED"
-          admin = true
-    else
-
-        local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
-        local bindable = Instance.new("BindableFunction")
-    
-        function bindable.OnInvoke(response)
-            if response == "nya-" then
-                local message = {
-                                [1] = "Yessir",
-                                [2] = "All"
-                            }
-    
-                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
-   		elseif response == "QUE-" then
-        		local message = {
-                                [1] = "YOO",
-                                [2] = "All"
-                            }
-    
-                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
-    		end
-        end
-    
-        StarterGui:SetCore("SendNotification", {
-            Title = "Rank: User 😺😺",
-            Text = "Jezko your daddy 😏😏",
-            Duration = 5,
-            Callback = bindable,
-            Button1 = "nya-",
-            Button2 = "QUE-"
-        })
-  end
-  
   for i,v in pairs(game:GetService('Players'):GetChildren()) do
       local isadmin = table.find(admins, v.UserId)
       if isadmin then
@@ -236,3 +169,7 @@ end)
 wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
+
+wait(1.5)
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/rank'),true))()
