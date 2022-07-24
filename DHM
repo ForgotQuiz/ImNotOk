@@ -3,3 +3,5 @@ loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNot
 wait(.5)
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/loader"))()
+
+--load
