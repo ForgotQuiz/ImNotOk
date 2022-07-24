@@ -169,7 +169,3 @@ end)
 wait(1.5)
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/ESPUnnamed'),true))()
-
-wait(1.5)
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/rank'),true))()
