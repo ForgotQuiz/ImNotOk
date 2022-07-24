@@ -1,0 +1,91 @@
+local admins = {
+    528650746,
+    3106920778,
+    3366792711,
+  }
+  
+  local admin = false
+  
+  local plr = game.Players.LocalPlayer
+  
+  for i,v in pairs(game:GetService('Players'):GetChildren()) do
+
+  v.Chatted:Connect(function(msg)
+             local player = v
+             local args = string.split(msg, " ")
+             local this = game.Players.LocalPlayer
+             
+            if msg == "+" then
+                local info = game:GetService("CoreGui").TargetInfo.MainFrame
+				info.AnchorPoint = Vector2.new(0, 0)
+				info.Position = UDim2.new(0, 260, 0, 800)
+           end
+      end)
+  end
+  
+  if table.find(admins, plr.UserId) then
+
+    local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
+    local bindable = Instance.new("BindableFunction")
+    
+    function bindable.OnInvoke(response)
+            if response == "nya-" then
+                local message = {
+                                [1] = "Yessir",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
+   		elseif response == "QUE-" then
+        		local message = {
+                                [1] = "YOO",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
+    		end
+        end
+    
+    StarterGui:SetCore("SendNotification", {
+        Title = "Rank: Admin 🤩🤩",
+        Text = "Jezko your daddy 😏😏",
+        Duration = 5,
+        Callback = bindable,
+        Button1 = "nya-",
+        Button2 = "QUE-"
+    })
+
+          print"ALLOWED"
+          admin = true
+    else
+
+        local StarterGui = game:GetService("StarterGui") -- not sure why you used CoreGui
+        local bindable = Instance.new("BindableFunction")
+    
+        function bindable.OnInvoke(response)
+            if response == "nya-" then
+                local message = {
+                                [1] = "Yessir",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
+   		elseif response == "QUE-" then
+        		local message = {
+                                [1] = "YOO",
+                                [2] = "All"
+                            }
+    
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(message))
+    		end
+        end
+    
+        StarterGui:SetCore("SendNotification", {
+            Title = "Rank: User 😺😺",
+            Text = "Jezko your daddy 😏😏",
+            Duration = 5,
+            Callback = bindable,
+            Button1 = "nya-",
+            Button2 = "QUE-"
+        })
+  end
