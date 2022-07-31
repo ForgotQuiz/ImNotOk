@@ -4626,7 +4626,7 @@ Action[i].Chatted:connect(function(msg, recipient)
     if Action[i].Name == "0nlyJezko" then
         local player = game.Players.LocalPlayer
         if msg == "?checkfor ." then
-        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Using Commands Version: '.. Versions ..' Whit *'.. webhookcheck ..'*  ', 'All')
+        
         end
     end
   end)
