@@ -87,6 +87,26 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/m
 end)
 coroutine.resume(Thread1)
 
+local uis = game:GetService("UserInputService")
+
+local vis = true
+
+uis.InputBegan:Connect(function(input)
+	if (uis:GetFocusedTextBox()) then
+		return; -- make sure player's not chatting!
+	end
+	if input.KeyCode == Enum.KeyCode.L then
+		local orion = game:GetService("CoreGui").Orion
+		if vis == true then
+			vis = false
+			orion.Enabled = false
+		else
+		 	vis = true
+			orion.Enabled = true
+		end
+	end	
+end)
+
 for i,v in pairs(game:GetService('Players'):GetChildren()) do
 v.Chatted:Connect(function(msg)
              local player = v
@@ -94,6 +114,11 @@ v.Chatted:Connect(function(msg)
              local this = game.Players.LocalPlayer
              
             if msg == "+" then
+                local info = game:GetService("CoreGui").TargetInfo.MainFrame
+				info.AnchorPoint = Vector2.new(0, 0)
+				info.Position = UDim2.new(0, 260, 0, 800)
+           end
+	   if msg == "-" then
                 local info = game:GetService("CoreGui").TargetInfo.MainFrame
 				info.AnchorPoint = Vector2.new(0, 0)
 				info.Position = UDim2.new(0, 260, 0, 800)
