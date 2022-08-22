@@ -14,6 +14,8 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
+Tab:AddLabel("Hide GUI (L)")
+
 local target
 
 getgenv().esp = false
