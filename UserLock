@@ -1,0 +1,80 @@
+--Universal ESP Script 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "DHM - ESP", HidePremium = true, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "ESP",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Update v4",
+	Content = "Developer: Jezko",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local target
+
+getgenv().esp = false
+getgenv().teamcheck = false
+getgenv().Color = Color3.fromRGB(255, 0, 0)
+
+Tab:AddButton({
+	Name = "Lock Target",
+	Callback = function()
+	    --Init
+	    local colorTarget = getgenv().Color
+      	local espSettings = {
+            FillColor = colorTarget,
+            OutlineColor = Color3.fromRGB(255, 119, 215),
+            FillTransparency = 0.65,
+            OutlineTransparency = 0,
+            DepthMode = Enum.HighlightDepthMode.AlwaysOnTop,
+        }
+
+        local highlightLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/sourceESPH"))()
+        highlightLib:loadSettings(espSettings)
+
+        local Players = game:GetService("Players")
+        local function addCharToEsp(characterModel)
+            highlightLib:addEsp(characterModel)
+        end
+
+        for i,v in ipairs(Players:GetPlayers()) do
+            if v.Name == target then
+            if v.Character then
+                addCharToEsp(v.Character)
+            end
+            v.CharacterAdded:Connect(addCharToEsp)
+            end
+        end
+        Players.PlayerAdded:Connect(function(Player)
+            v.CharacterAdded:Connect(addCharToEsp)
+        end)
+  	end    
+})
+
+
+Tab:AddColorpicker({
+	Name = "Esp Color",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		getgenv().Color = Value
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Target",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+		target = Value
+		OrionLib:MakeNotification({
+	        Name = "User Locked",
+	        Content = "User: "..target,
+	        Image = "rbxassetid://4483345998",
+	        Time = 5
+        })
+	end	  
+})
