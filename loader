@@ -132,5 +132,3 @@ local Thread1 = coroutine.create(function()
     end)
 end)
 coroutine.resume(Thread1)
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ForgotQuiz/ImNotOk/main/UserLock', true))()
