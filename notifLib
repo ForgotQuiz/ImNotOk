@@ -295,7 +295,6 @@ function notificationLibrary:CreateDefaultNotif(args) {
     notifAmount = notifAmount + 1
     local track = notifAmount
     local notifNum = notifAmount
-    local removed = false
     local doesExist = true
     local notif = notificationHolder.DefaultNotif:Clone()
     notif.Parent = notificationHolder
@@ -354,3 +353,5 @@ function notificationLibrary:CreateDefaultNotif(args) {
     task.wait(args.TweenOutSpeed)
     notif:Destroy()
 }
+
+return notificationLibrary
